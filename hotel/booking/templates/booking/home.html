@@ -1,1786 +1,1231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Amin Kabab House | Mirpur AJK</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#fffaf2;
-    color:#24140d;
-}
-
-/* ================= HEADER ================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:999;
-    background:#24130b;
-    color:white;
-    padding:16px 6%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    box-shadow:0 4px 20px rgba(0,0,0,.25);
-}
-
-.logo{
-    font-size:25px;
-    font-weight:bold;
-    color:#ffb52b;
-}
-
-.logo span{
-    color:white;
-}
-
-nav{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-}
-
-nav a:hover{
-    color:#ffb52b;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:560px;
-    display:flex;
-    align-items:center;
-    padding:80px 7%;
-    color:white;
-
-    background:
-    linear-gradient(
-        90deg,
-        rgba(20,10,5,.96),
-        rgba(20,10,5,.50)
-    ),
-    url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=85");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-content{
-    max-width:700px;
-}
-
-.hero h1{
-    font-size:58px;
-    line-height:1.1;
-    margin-bottom:20px;
-}
-
-.hero h1 span{
-    color:#ffb52b;
-}
-
-.hero p{
-    font-size:18px;
-    line-height:1.7;
-    color:#eee;
-}
-
-.btn{
-    display:inline-block;
-    background:#e88919;
-    color:white;
-    padding:13px 24px;
-    border-radius:30px;
-    text-decoration:none;
-    border:none;
-    cursor:pointer;
-    font-weight:bold;
-    margin-top:20px;
-}
-
-.btn:hover{
-    background:#ffab24;
-    transform:translateY(-2px);
-}
-
-/* ================= GENERAL ================= */
-
-section{
-    padding:65px 6%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.section-title h2{
-    font-size:36px;
-    color:#672b0c;
-}
-
-.section-title p{
-    color:#777;
-    margin-top:10px;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-    background:#fff;
-}
-
-.feature-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-    gap:20px;
-}
-
-.feature{
-    background:#fffaf2;
-    padding:25px 18px;
-    text-align:center;
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,.07);
-    transition:.25s;
-}
-
-.feature:hover{
-    transform:translateY(-7px);
-}
-
-.feature .icon{
-    font-size:40px;
-    margin-bottom:12px;
-}
-
-.feature h3{
-    color:#672b0c;
-    margin-bottom:8px;
-}
-
-.feature p{
-    color:#777;
-    font-size:14px;
-    line-height:1.5;
-}
-
-/* ================= SEARCH ================= */
-
-.search{
-    width:100%;
-    max-width:550px;
-    display:block;
-    margin:0 auto 25px;
-    padding:15px 20px;
-    border:1px solid #ddd;
-    border-radius:30px;
-    outline:none;
-    font-size:16px;
-}
-
-/* ================= FILTERS ================= */
-
-.filters{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:9px;
-    margin-bottom:35px;
-}
-
-.filters button{
-    padding:10px 16px;
-    background:white;
-    border:1px solid #e88919;
-    border-radius:25px;
-    cursor:pointer;
-}
-
-.filters button:hover,
-.filters button.active{
-    background:#e88919;
-    color:white;
-}
-
-/* ================= MENU ================= */
-
-.menu-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
-    gap:24px;
-}
-
-.food-card{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 22px rgba(0,0,0,.08);
-    transition:.25s;
-}
-
-.food-card:hover{
-    transform:translateY(-6px);
-}
-
-.food-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.food-info{
-    padding:17px;
-}
-
-.food-info h3{
-    color:#672b0c;
-    font-size:20px;
-    margin-bottom:8px;
-}
-
-.food-info p{
-    color:#777;
-    font-size:14px;
-    line-height:1.5;
-    min-height:42px;
-}
-
-.price{
-    color:#d66c00;
-    font-size:19px;
-    font-weight:bold;
-    margin:13px 0;
-}
-
-.add-btn{
-    width:100%;
-    padding:11px;
-    border:none;
-    background:#351b0e;
-    color:white;
-    border-radius:25px;
-    cursor:pointer;
-}
-
-.add-btn:hover{
-    background:#e88919;
-}
-
-/* ================= DRINKS ================= */
-
-.drinks-section{
-    background:#f7efe3;
-}
-
-.drink-note{
-    max-width:700px;
-    margin:-15px auto 30px;
-    text-align:center;
-    color:#777;
-}
-
-/* ================= DEALS ================= */
-
-.deals{
-    background:#351b0e;
-    color:white;
-}
-
-.deals .section-title h2{
-    color:#ffb52b;
-}
-
-.deal-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:22px;
-}
-
-.deal{
-    background:white;
-    color:#24140d;
-    border-radius:18px;
-    padding:25px;
-    border-left:6px solid #e88919;
-}
-
-.deal h3{
-    color:#722e09;
-    margin-bottom:12px;
-}
-
-.deal p{
-    color:#777;
-    line-height:1.6;
-}
-
-.deal-price{
-    font-size:25px;
-    color:#d66c00;
-    font-weight:bold;
-    margin-top:15px;
-}
-
-/* ================= ABOUT ================= */
-
-.about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-}
-
-.about-image img{
-    width:100%;
-    height:400px;
-    object-fit:cover;
-    border-radius:22px;
-}
-
-.about-text h2{
-    font-size:38px;
-    color:#672b0c;
-    margin-bottom:15px;
-}
-
-.about-text p{
-    color:#666;
-    line-height:1.8;
-    margin-bottom:15px;
-}
-
-/* ================= REVIEWS ================= */
-
-.reviews{
-    background:#fff;
-}
-
-.review-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.review{
-    background:#fffaf2;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 5px 18px rgba(0,0,0,.06);
-}
-
-.stars{
-    color:#e88919;
-    font-size:20px;
-    margin-bottom:10px;
-}
-
-.review p{
-    color:#666;
-    line-height:1.6;
-}
-
-.review h4{
-    margin-top:15px;
-    color:#672b0c;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-    background:#ffedcf;
-    text-align:center;
-}
-
-.contact-box{
-    max-width:700px;
-    margin:auto;
-}
-
-.contact-box p{
-    margin:10px;
-    color:#555;
-    font-size:17px;
-}
-
-/* ================= CART ================= */
-
-.cart{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:350px;
-    max-width:calc(100% - 40px);
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 5px 35px rgba(0,0,0,.3);
-    z-index:2000;
-    display:none;
-}
-
-.cart.show{
-    display:block;
-}
-
-.close-cart{
-    float:right;
-    border:none;
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    cursor:pointer;
-}
-
-.cart h2{
-    color:#672b0c;
-    margin-bottom:15px;
-}
-
-.cart-items{
-    max-height:250px;
-    overflow:auto;
-}
-
-.cart-item{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    padding:10px 0;
-    border-bottom:1px solid #eee;
-    font-size:14px;
-}
-
-.qty-buttons{
-    display:flex;
-    align-items:center;
-    gap:6px;
-}
-
-.qty-buttons button{
-    width:25px;
-    height:25px;
-    border:none;
-    border-radius:50%;
-    cursor:pointer;
-}
-
-.cart-total{
-    font-size:21px;
-    font-weight:bold;
-    margin-top:17px;
-    color:#d66c00;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#24130b;
-    color:white;
-    text-align:center;
-    padding:35px 6%;
-    line-height:1.8;
-}
-
-footer h2{
-    color:#ffb52b;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:800px){
-
-    header{
-        flex-direction:column;
-        gap:12px;
-    }
-
-    nav{
-        gap:10px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .hero{
-        min-height:500px;
-    }
-
-    .hero h1{
-        font-size:38px;
-    }
-
-    .about{
-        grid-template-columns:1fr;
-    }
-
-    .about-image img{
-        height:280px;
-    }
-
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Amin Kabab House | Authentic Pakistani BBQ & Desi Food</title>
+    <meta name="description" content="Amin Kabab House — delicious kababs, BBQ, Malai Boti, Chicken Tikka, Karahi and authentic Pakistani food.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0d0d0d;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(12, 12, 12, 0.96);
+            border-bottom: 1px solid #292929;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 75px;
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #f5b942;
+            letter-spacing: .5px;
+        }
+
+        .logo span {
+            display: block;
+            color: #fff;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: -4px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #eee;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #f5b942;
+        }
+
+        .nav-call {
+            background: #f5b942;
+            color: #111 !important;
+            padding: 10px 17px;
+            border-radius: 7px;
+        }
+
+        .nav-call:hover {
+            background: #fff;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.92), rgba(0,0,0,.68), rgba(0,0,0,.30)),
+                url("https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=1800&q=85")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            width: 1200px;
+            max-width: 100%;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .hero-label {
+            color: #f5b942;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.02;
+            max-width: 780px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #f5b942;
+        }
+
+        .hero p {
+            max-width: 610px;
+            color: #ddd;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 7px;
+            font-weight: 800;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: #f5b942;
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #fff;
+        }
+
+        .btn-outline {
+            border: 1px solid #aaa;
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            border-color: #f5b942;
+            color: #f5b942;
+        }
+
+        /* ================= SPECIAL STRIP ================= */
+
+        .feature-strip {
+            background: #f5b942;
+            color: #111;
+        }
+
+        .feature-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 22px 25px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .feature strong {
+            display: block;
+            font-size: 16px;
+        }
+
+        .feature small {
+            font-size: 12px;
+            opacity: .75;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 90px 25px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-heading small {
+            color: #f5b942;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(32px, 5vw, 50px);
+            margin-top: 7px;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            margin: 12px auto 0;
+            color: #aaa;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #121212;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 14px;
+            overflow: hidden;
+            min-height: 460px;
+            background:
+                url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=85")
+                center/cover;
+        }
+
+        .about-text h2 {
+            font-size: 42px;
+            margin: 12px 0 20px;
+        }
+
+        .about-text p {
+            color: #aaa;
+            margin-bottom: 18px;
+        }
+
+        .about-label {
+            color: #f5b942;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .about-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .about-list li {
+            margin: 12px 0;
+            color: #ddd;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            color: #f5b942;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* ================= MENU ================= */
+
+        .menu {
+            background: #0d0d0d;
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .menu-tabs span {
+            border: 1px solid #333;
+            padding: 9px 18px;
+            border-radius: 30px;
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        .menu-tabs span.active {
+            background: #f5b942;
+            color: #111;
+            border-color: #f5b942;
+            font-weight: 800;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .food-card {
+            background: #171717;
+            border: 1px solid #272727;
+            border-radius: 13px;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-7px);
+            border-color: #f5b942;
+        }
+
+        .food-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .food-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .food-card:hover .food-image img {
+            transform: scale(1.06);
+        }
+
+        .food-info {
+            padding: 20px;
+        }
+
+        .food-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .food-info h3 {
+            font-size: 19px;
+        }
+
+        .price {
+            color: #f5b942;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        .food-info p {
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background:
+                linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.78)),
+                url("https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1800&q=85")
+                center/cover fixed;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: clamp(35px, 5vw, 58px);
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #ddd;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #121212;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: #191919;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            padding: 32px;
+        }
+
+        .contact-card h3 {
+            color: #f5b942;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .contact-card p {
+            color: #aaa;
+            margin: 10px 0;
+        }
+
+        .contact-number {
+            display: inline-block;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .contact-number:hover {
+            color: #f5b942;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #080808;
+            border-top: 1px solid #222;
+            padding: 55px 25px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: #f5b942;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p,
+        .footer-col p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .footer-col a {
+            display: block;
+            color: #888;
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .footer-col a:hover {
+            color: #f5b942;
+        }
+
+        .developer {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+        }
+
+        .developer strong {
+            color: #f5b942;
+        }
+
+        /* ================= FLOATING WHATSAPP ================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 999;
+            background: #25d366;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            box-shadow: 0 5px 20px rgba(0,0,0,.4);
+            transition: .3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+                gap: 13px;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+
+            .navbar {
+                min-height: 65px;
+                padding: 0 18px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            section {
+                padding: 65px 18px;
+            }
+
+            .hero-content {
+                padding: 70px 18px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .food-image {
+                height: 230px;
+            }
+
+            .about-image {
+                min-height: 330px;
+            }
+
+            .about-text h2 {
+                font-size: 34px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-number {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+    <!-- ================= HEADER ================= -->
 
-<header>
+    <header>
+        <div class="navbar">
 
-    <div class="logo">
-        AMIN <span>KABAB HOUSE</span>
-    </div>
+            <a href="#home" class="logo">
+                Amin Kabab House
+                <span>Authentic Taste</span>
+            </a>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="#menu">Menu</a>
-        <a href="#deals">Deals</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-        <a href="#" onclick="openCart();return false;">🛒 Cart</a>
-    </nav>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
+                <a class="nav-call" href="tel:03498037743">Call Now</a>
+            </nav>
 
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <h1>
-            Welcome to
-            <span>Amin Kabab House</span>
-        </h1>
-
-        <p>
-            Traditional Pakistani taste, juicy kababs,
-            BBQ, karahi, handi, fresh roti and much more.
-            Experience the taste of Mirpur's famous Amin Kabab House.
-        </p>
-
-        <a href="#menu" class="btn">
-            Explore Menu
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= AMAZING FEATURES ================= -->
-
-<section class="features" id="features">
-
-    <div class="section-title">
-
-        <h2>⭐ Amazing Features</h2>
-
-        <p>
-            Everything you need for a modern restaurant ordering experience.
-        </p>
-
-    </div>
-
-    <div class="feature-grid">
-
-        <div class="feature">
-            <div class="icon">🛒</div>
-            <h3>Easy Cart</h3>
-            <p>Add your favourite food to cart easily.</p>
         </div>
-
-        <div class="feature">
-            <div class="icon">🔍</div>
-            <h3>Food Search</h3>
-            <p>Find any dish quickly using search.</p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">📂</div>
-            <h3>Categories</h3>
-            <p>Browse BBQ, Karahi, Pizza, Burger and more.</p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">🎁</div>
-            <h3>Special Deals</h3>
-            <p>Family and friends packages.</p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">📱</div>
-            <h3>WhatsApp Order</h3>
-            <p>Send your complete order directly on WhatsApp.</p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">💰</div>
-            <h3>Automatic Total</h3>
-            <p>Your cart calculates the total automatically.</p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">📍</div>
-            <h3>Restaurant Location</h3>
-            <p>Quickly find Amin Kabab House in Mirpur.</p>
-        </div>
-
-        <div class="feature">
-            <div class="icon">📱</div>
-            <h3>Mobile Friendly</h3>
-            <p>Beautiful design on mobile, tablet and laptop.</p>
-        </div>
-
-    </div>
-
-</section>
+    </header>
 
 
-<!-- ================= MENU ================= -->
+    <!-- ================= HERO ================= -->
 
-<section id="menu">
+    <section class="hero" id="home">
 
-    <div class="section-title">
+        <div class="hero-content">
 
-        <h2>🍽️ Our Menu</h2>
-
-        <p>
-            Choose your favourite food.
-        </p>
-
-    </div>
-
-    <input
-        type="text"
-        id="search"
-        class="search"
-        placeholder="🔍 Search food..."
-    >
-
-    <div class="filters">
-
-        <button class="active" onclick="filterMenu('all',this)">
-            All
-        </button>
-
-        <button onclick="filterMenu('mutton',this)">
-            Mutton
-        </button>
-
-        <button onclick="filterMenu('chicken',this)">
-            Chicken
-        </button>
-
-        <button onclick="filterMenu('bbq',this)">
-            BBQ
-        </button>
-
-        <button onclick="filterMenu('karahi',this)">
-            Karahi
-        </button>
-
-        <button onclick="filterMenu('handi',this)">
-            Handi
-        </button>
-
-        <button onclick="filterMenu('burger',this)">
-            🍔 Burgers
-        </button>
-
-        <button onclick="filterMenu('pizza',this)">
-            🍕 Pizza
-        </button>
-
-        <button onclick="filterMenu('shawarma',this)">
-            🌯 Shawarma
-        </button>
-
-        <button onclick="filterMenu('sandwich',this)">
-            🥪 Sandwich
-        </button>
-
-        <button onclick="filterMenu('rice',this)">
-            🍚 Rice
-        </button>
-
-        <button onclick="filterMenu('bread',this)">
-            🫓 Roti & Naan
-        </button>
-
-        <button onclick="filterMenu('fastfood',this)">
-            🍟 Fast Food
-        </button>
-
-        <button onclick="filterMenu('drinks',this)">
-            🥤 Drinks
-        </button>
-
-        <button onclick="filterMenu('dessert',this)">
-            🍨 Desserts
-        </button>
-
-    </div>
-
-    <div class="menu-grid" id="menuGrid"></div>
-
-</section>
-
-
-<!-- ================= DRINKS ================= -->
-
-<section class="drinks-section">
-
-    <div class="section-title">
-
-        <h2>🥤 Drinks</h2>
-
-        <p>
-            Chilled drinks and refreshing beverages.
-        </p>
-
-    </div>
-
-    <div class="drink-note">
-        Drink cards are kept separate so each drink can later have
-        its exact matching product image.
-    </div>
-
-    <div class="menu-grid" id="drinkGrid"></div>
-
-</section>
-
-
-<!-- ================= DEALS ================= -->
-
-<section class="deals" id="deals">
-
-    <div class="section-title">
-
-        <h2>🔥 Special Deals</h2>
-
-        <p style="color:#ddd">
-            Perfect for families, friends and parties.
-        </p>
-
-    </div>
-
-    <div class="deal-grid">
-
-        <div class="deal">
-
-            <h3>🍗 Family BBQ Deal</h3>
-
-            <p>
-                Chicken Tikka + Chicken Boti +
-                Seekh Kabab + Roti + Salad + Chatni.
-            </p>
-
-            <div class="deal-price">
-                Rs. 2,999
+            <div class="hero-label">
+                Welcome to Amin Kabab House
             </div>
 
-            <button
-                class="btn"
-                onclick="addToCart('Family BBQ Deal',2999)"
-            >
-                Add Deal
-            </button>
+            <h1>
+                Real Taste.<br>
+                <span>Real Tradition.</span>
+            </h1>
+
+            <p>
+                Freshly prepared Pakistani BBQ, juicy kababs,
+                traditional desi dishes and unforgettable flavors
+                served with quality and passion.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">
+                    Explore Our Menu
+                </a>
+
+                <a href="tel:03498037743" class="btn btn-outline">
+                    Call 03498 037743
+                </a>
+            </div>
 
         </div>
 
+    </section>
 
-        <div class="deal">
 
-            <h3>👨‍👩‍👧 Family Feast</h3>
+    <!-- ================= FEATURES ================= -->
 
-            <p>
-                Mutton Karahi + Chicken Handi +
-                BBQ Platter + Roti + Salad.
-            </p>
+    <div class="feature-strip">
 
-            <div class="deal-price">
-                Rs. 5,999
+        <div class="feature-container">
+
+            <div class="feature">
+                <strong>🔥 Fresh BBQ</strong>
+                <small>Prepared fresh for great taste</small>
             </div>
 
-            <button
-                class="btn"
-                onclick="addToCart('Family Feast',5999)"
-            >
-                Add Deal
-            </button>
-
-        </div>
-
-
-        <div class="deal">
-
-            <h3>🍔 Burger Combo</h3>
-
-            <p>
-                2 Chicken Burgers + Large Fries +
-                2 Soft Drinks.
-            </p>
-
-            <div class="deal-price">
-                Rs. 1,499
+            <div class="feature">
+                <strong>🥘 Desi Flavours</strong>
+                <small>Authentic Pakistani recipes</small>
             </div>
 
-            <button
-                class="btn"
-                onclick="addToCart('Burger Combo',1499)"
-            >
-                Add Deal
-            </button>
-
-        </div>
-
-
-        <div class="deal">
-
-            <h3>🍕 Pizza Party</h3>
-
-            <p>
-                Large Chicken Pizza + Large Fries +
-                4 Soft Drinks.
-            </p>
-
-            <div class="deal-price">
-                Rs. 1,999
+            <div class="feature">
+                <strong>⭐ Quality First</strong>
+                <small>Taste and quality in every bite</small>
             </div>
-
-            <button
-                class="btn"
-                onclick="addToCart('Pizza Party',1999)"
-            >
-                Add Deal
-            </button>
 
         </div>
 
     </div>
 
-</section>
 
+    <!-- ================= ABOUT ================= -->
 
-<!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
 
-<section>
+        <div class="section-container">
 
-    <div class="about">
+            <div class="about-grid">
 
-        <div class="about-image">
+                <div class="about-image"></div>
 
-            <img
-                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=85"
-                alt="BBQ"
-            >
+                <div class="about-text">
+
+                    <div class="about-label">
+                        Our Story
+                    </div>
+
+                    <h2>
+                        A Taste Worth Coming Back For
+                    </h2>
+
+                    <p>
+                        At Amin Kabab House, we believe great food is
+                        more than just a meal. It is about fresh
+                        ingredients, traditional flavours and food
+                        prepared with care.
+                    </p>
+
+                    <p>
+                        From sizzling BBQ to rich desi dishes,
+                        every plate is prepared to give you the
+                        authentic taste you expect.
+                    </p>
+
+                    <ul class="about-list">
+                        <li>Freshly prepared food</li>
+                        <li>Authentic Pakistani taste</li>
+                        <li>Quality ingredients</li>
+                        <li>Generous and delicious portions</li>
+                    </ul>
+
+                    <a href="#menu" class="btn btn-primary">
+                        View Our Menu
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="about-text">
+    </section>
 
-            <h2>About Amin Kabab House</h2>
+
+    <!-- ================= MENU ================= -->
+
+    <section class="menu" id="menu">
+
+        <div class="section-container">
+
+            <div class="section-heading">
+
+                <small>Our Menu</small>
+
+                <h2>
+                    Signature Dishes
+                </h2>
+
+                <p>
+                    A selection of popular Pakistani BBQ and desi
+                    favourites prepared with authentic flavours.
+                </p>
+
+            </div>
+
+
+            <div class="menu-tabs">
+                <span class="active">BBQ</span>
+                <span>Kababs</span>
+                <span>Chicken</span>
+                <span>Desi Food</span>
+            </div>
+
+
+            <div class="menu-grid">
+
+
+                <!-- ITEM 1 -->
+
+                <div class="food-card">
+
+                    <div class="food-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85"
+                            alt="Seekh Kabab"
+                        >
+                    </div>
+
+                    <div class="food-info">
+
+                        <div class="food-top">
+                            <h3>Seekh Kabab</h3>
+                            <span class="price">Rs. —</span>
+                        </div>
+
+                        <p>
+                            Juicy minced meat kababs grilled
+                            with traditional spices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 2 -->
+
+                <div class="food-card">
+
+                    <div class="food-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=900&q=85"
+                            alt="Malai Boti"
+                        >
+                    </div>
+
+                    <div class="food-info">
+
+                        <div class="food-top">
+                            <h3>Malai Boti</h3>
+                            <span class="price">Rs. —</span>
+                        </div>
+
+                        <p>
+                            Tender chicken pieces marinated
+                            in a creamy, rich blend of spices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 3 -->
+
+                <div class="food-card">
+
+                    <div class="food-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85"
+                            alt="Chicken Tikka"
+                        >
+                    </div>
+
+                    <div class="food-info">
+
+                        <div class="food-top">
+                            <h3>Chicken Tikka</h3>
+                            <span class="price">Rs. —</span>
+                        </div>
+
+                        <p>
+                            Smoky grilled chicken marinated
+                            with classic Pakistani spices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 4 -->
+
+                <div class="food-card">
+
+                    <div class="food-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1593560708920-61dd98c8c0a1?auto=format&fit=crop&w=900&q=85"
+                            alt="Chicken Karahi"
+                        >
+                    </div>
+
+                    <div class="food-info">
+
+                        <div class="food-top">
+                            <h3>Chicken Karahi</h3>
+                            <span class="price">Rs. —</span>
+                        </div>
+
+                        <p>
+                            Traditional karahi cooked with
+                            tomatoes, green chillies and spices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 5 -->
+
+                <div class="food-card">
+
+                    <div class="food-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1545247181-516773cae754?auto=format&fit=crop&w=900&q=85"
+                            alt="Chicken Biryani"
+                        >
+                    </div>
+
+                    <div class="food-info">
+
+                        <div class="food-top">
+                            <h3>Chicken Biryani</h3>
+                            <span class="price">Rs. —</span>
+                        </div>
+
+                        <p>
+                            Fragrant basmati rice layered with
+                            tender chicken and aromatic spices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 6 -->
+
+                <div class="food-card">
+
+                    <div class="food-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=900&q=85"
+                            alt="Chicken Handi"
+                        >
+                    </div>
+
+                    <div class="food-info">
+
+                        <div class="food-top">
+                            <h3>Chicken Handi</h3>
+                            <span class="price">Rs. —</span>
+                        </div>
+
+                        <p>
+                            Creamy and flavorful chicken handi
+                            cooked in traditional desi style.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 7 -->
+
+                <div class="food-card">
+
+                    <div class="food-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=900&q=85"
+                            alt="Chicken Cheese Kabab"
+                        >
+                    </div>
+
+                    <div class="food-info">
+
+                        <div class="food-top">
+                            <h3>Chicken Cheese Kabab</h3>
+                            <span class="price">Rs. —</span>
+                        </div>
+
+                        <p>
+                            Delicious chicken kabab with a
+                            rich cheesy centre.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 8 -->
+
+                <div class="food-card">
+
+                    <div class="food-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1521305916504-4a1121188589?auto=format&fit=crop&w=900&q=85"
+                            alt="BBQ Platter"
+                        >
+                    </div>
+
+                    <div class="food-info">
+
+                        <div class="food-top">
+                            <h3>Special BBQ Platter</h3>
+                            <span class="price">Rs. —</span>
+                        </div>
+
+                        <p>
+                            A delicious combination of our
+                            favourite BBQ selections.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 9 -->
+
+                <div class="food-card">
+
+                    <div class="food-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=85"
+                            alt="Beef Kabab"
+                        >
+                    </div>
+
+                    <div class="food-info">
+
+                        <div class="food-top">
+                            <h3>Beef Kabab</h3>
+                            <span class="price">Rs. —</span>
+                        </div>
+
+                        <p>
+                            Traditional beef kababs grilled
+                            to perfection.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CALL TO ACTION ================= -->
+
+    <section class="cta">
+
+        <div class="section-container">
+
+            <h2>
+                Hungry Yet?
+            </h2>
 
             <p>
-                Amin Kabab House is a traditional food destination
-                in Mirpur, Azad Kashmir, known for BBQ and desi food.
+                Give us a call and enjoy the delicious taste
+                of Amin Kabab House.
             </p>
 
-            <p>
-                The official menu includes popular dishes such as
-                Mutton Seekh Kabab, Chicken Seekh Kabab,
-                Mutton Seekh Tikka, Chicken Malai Boti,
-                Mutton Karahi, Mutton Kaleji Handi,
-                Chicken Handi Boneless and Chicken Karahi.
-            </p>
-
-            <a
-                href="https://aminkababhouse.com/"
-                target="_blank"
-                class="btn"
-            >
-                Visit Official Website
+            <a href="tel:03498037743" class="btn btn-primary">
+                📞 03498 037743
             </a>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= REVIEWS ================= -->
+    <!-- ================= CONTACT ================= -->
 
-<section class="reviews" id="reviews">
+    <section class="contact" id="contact">
 
-    <div class="section-title">
+        <div class="section-container">
 
-        <h2>❤️ Customer Reviews</h2>
+            <div class="section-heading">
 
-        <p>
-            What customers have said about their experience.
-        </p>
+                <small>Get In Touch</small>
 
-    </div>
+                <h2>
+                    Visit or Call Us
+                </h2>
 
-    <div class="review-grid">
+                <p>
+                    For orders, enquiries or information,
+                    contact Amin Kabab House directly.
+                </p>
 
-        <div class="review">
-
-            <div class="stars">
-                ★★★★★
             </div>
 
-            <p>
-                Amazing traditional BBQ taste and very good
-                experience with the food.
-            </p>
 
-            <h4>— Customer Review</h4>
+            <div class="contact-grid">
 
-        </div>
+                <div class="contact-card">
 
+                    <h3>📞 Phone & Orders</h3>
 
-        <div class="review">
+                    <p>
+                        Call us directly for orders and enquiries.
+                    </p>
 
-            <div class="stars">
-                ★★★★★
-            </div>
+                    <a
+                        href="tel:03498037743"
+                        class="contact-number"
+                    >
+                        03498 037743
+                    </a>
 
-            <p>
-                The mutton and malai boti are among the
-                popular choices mentioned by customers.
-            </p>
+                    <br>
 
-            <h4>— Customer Review</h4>
+                    <a
+                        href="https://wa.me/923498037743"
+                        class="btn btn-primary"
+                        target="_blank"
+                    >
+                        WhatsApp Us
+                    </a>
 
-        </div>
-
-
-        <div class="review">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                Traditional desi food, friendly atmosphere
-                and family seating.
-            </p>
-
-            <h4>— Customer Review</h4>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact" id="contact">
-
-    <div class="contact-box">
-
-        <div class="section-title">
-
-            <h2>📍 Contact Us</h2>
-
-        </div>
-
-        <p>
-            <strong>📍 Address:</strong>
-            Sangot Road, Puranian Hattian,
-            Mirpur Azad Kashmir
-        </p>
-
-        <p>
-            <strong>📞 Phone:</strong>
-            05827-442350
-        </p>
-
-        <p>
-            <strong>🚚 Delivery:</strong>
-            30 Minutes Delivery
-        </p>
-
-        <a
-            href="https://wa.me/925827442350"
-            target="_blank"
-            class="btn"
-        >
-            Order on WhatsApp
-        </a>
-
-        <br>
-
-        <a
-            href="https://www.google.com/maps/search/?api=1&query=Amin+Kabab+House+Mirpur+AJK"
-            target="_blank"
-            class="btn"
-        >
-            📍 Open Google Maps
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CART ================= -->
-
-<div class="cart" id="cart">
-
-    <button
-        class="close-cart"
-        onclick="closeCart()"
-    >
-        ×
-    </button>
-
-    <h2>🛒 Your Cart</h2>
-
-    <div
-        class="cart-items"
-        id="cartItems"
-    ></div>
-
-    <div
-        class="cart-total"
-        id="cartTotal"
-    >
-        Total: Rs. 0
-    </div>
-
-    <button
-        class="btn"
-        onclick="sendWhatsAppOrder()"
-    >
-        📱 Order on WhatsApp
-    </button>
-
-</div>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <h2>AMIN KABAB HOUSE</h2>
-
-    <p>
-        BBQ • Kabab • Karahi • Handi • Roti •
-        Burgers • Pizza • Drinks
-    </p>
-
-    <p>
-        📞 05827-442350
-    </p>
-
-    <p>
-        © 2026 Amin Kabab House
-    </p>
-
-</footer>
-
-
-<script>
-
-/* =====================================================
-   FOOD DATABASE
-===================================================== */
-
-const products = [
-
-/* MUTTON */
-
-{
-name:"Mutton Seekh Kabab",
-cat:"mutton",
-price:2700,
-desc:"Juicy and spicy traditional mutton seekh kabab.",
-image:"https://images.unsplash.com/photo-1599487488170-d11ec9c172f0"
-},
-
-{
-name:"Mutton Seekh Tikka",
-cat:"mutton",
-price:3000,
-desc:"Premium minced mutton with tikka marinade.",
-image:"https://images.unsplash.com/photo-1544025162-d76694265947"
-},
-
-{
-name:"Mutton Karahi",
-cat:"karahi",
-price:3000,
-desc:"Traditional spicy mutton karahi.",
-image:"https://images.unsplash.com/photo-1603894584373-5ac82b2ae398"
-},
-
-{
-name:"Mutton Kaleji Handi",
-cat:"handi",
-price:3000,
-desc:"Bold and spicy mutton kaleji handi.",
-image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7"
-},
-
-{
-name:"Mutton Kabab Handi",
-cat:"handi",
-price:3700,
-desc:"Chargrilled mutton kababs in creamy gravy.",
-image:"https://images.unsplash.com/photo-1603894584373-5ac82b2ae398"
-},
-
-/* CHICKEN */
-
-{
-name:"Chicken Seekh Kabab",
-cat:"chicken",
-price:2000,
-desc:"Fresh chicken seekh kabab.",
-image:"https://images.unsplash.com/photo-1599487488170-d11ec9c172f0"
-},
-
-{
-name:"Chicken Malai Boti",
-cat:"chicken",
-price:1200,
-desc:"Soft and creamy chicken malai boti.",
-image:"https://images.unsplash.com/photo-1532550907401-a500c9a57435"
-},
-
-{
-name:"Chicken Boti",
-cat:"chicken",
-price:1200,
-desc:"Tender grilled chicken boti.",
-image:"https://images.unsplash.com/photo-1532550907401-a500c9a57435"
-},
-
-{
-name:"Chicken Tikka",
-cat:"chicken",
-price:1400,
-desc:"Traditional spicy chicken tikka.",
-image:"https://images.unsplash.com/photo-1599487488170-d11ec9c172f0"
-},
-
-{
-name:"Chicken Handi Boneless",
-cat:"handi",
-price:2000,
-desc:"Creamy boneless chicken handi.",
-image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7"
-},
-
-{
-name:"Chicken Karahi",
-cat:"karahi",
-price:1600,
-desc:"Classic Pakistani chicken karahi.",
-image:"https://images.unsplash.com/photo-1603894584373-5ac82b2ae398"
-},
-
-/* FAST FOOD */
-
-{
-name:"Chicken Burger",
-cat:"burger",
-price:550,
-desc:"Classic chicken burger.",
-image:"https://images.unsplash.com/photo-1550547660-d9450f859349"
-},
-
-{
-name:"Zinger Burger",
-cat:"burger",
-price:650,
-desc:"Crispy chicken zinger burger.",
-image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
-},
-
-{
-name:"Cheese Burger",
-cat:"burger",
-price:800,
-desc:"Juicy burger with melted cheese.",
-image:"https://images.unsplash.com/photo-1572802419224-296b0aeee0d9"
-},
-
-{
-name:"Beef Burger",
-cat:"burger",
-price:750,
-desc:"Juicy beef burger.",
-image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
-},
-
-{
-name:"Chicken Pizza",
-cat:"pizza",
-price:1200,
-desc:"Chicken loaded pizza.",
-image:"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
-},
-
-{
-name:"Cheese Pizza",
-cat:"pizza",
-price:1100,
-desc:"Extra cheese pizza.",
-image:"https://images.unsplash.com/photo-1579751626657-72bc17010498"
-},
-
-{
-name:"BBQ Pizza",
-cat:"pizza",
-price:1350,
-desc:"BBQ chicken pizza.",
-image:"https://images.unsplash.com/photo-1594007654729-407eedc4be65"
-},
-
-{
-name:"Pepperoni Pizza",
-cat:"pizza",
-price:1400,
-desc:"Pepperoni pizza.",
-image:"https://images.unsplash.com/photo-1628840042765-356cda07504e"
-},
-
-{
-name:"Chicken Shawarma",
-cat:"shawarma",
-price:350,
-desc:"Chicken shawarma wrap.",
-image:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783"
-},
-
-{
-name:"Zinger Shawarma",
-cat:"shawarma",
-price:450,
-desc:"Crispy zinger shawarma.",
-image:"https://images.unsplash.com/photo-1529006557810-274b9b2fc783"
-},
-
-{
-name:"Club Sandwich",
-cat:"sandwich",
-price:750,
-desc:"Triple-layer chicken club sandwich.",
-image:"https://images.unsplash.com/photo-1553909489-cd47e0907980"
-},
-
-{
-name:"Chicken Sandwich",
-cat:"sandwich",
-price:450,
-desc:"Fresh chicken sandwich.",
-image:"https://images.unsplash.com/photo-1521390188846-e2a6a974e0b0"
-},
-
-{
-name:"Chicken Nuggets",
-cat:"fastfood",
-price:650,
-desc:"Crispy chicken nuggets.",
-image:"https://images.unsplash.com/photo-1562967916-eb82221dfb92"
-},
-
-{
-name:"Chicken Wings",
-cat:"fastfood",
-price:850,
-desc:"Spicy chicken wings.",
-image:"https://images.unsplash.com/photo-1527477396000-e27163b481c2"
-},
-
-{
-name:"French Fries",
-cat:"fastfood",
-price:300,
-desc:"Hot and crispy French fries.",
-image:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877"
-},
-
-{
-name:"Loaded Fries",
-cat:"fastfood",
-price:650,
-desc:"Loaded fries with chicken and cheese.",
-image:"https://images.unsplash.com/photo-1585109649139-366815a0d713"
-},
-
-/* RICE */
-
-{
-name:"Chicken Biryani",
-cat:"rice",
-price:450,
-desc:"Aromatic chicken biryani.",
-image:"https://images.unsplash.com/photo-1585937421612-70a008356fbe"
-},
-
-{
-name:"Chicken Fried Rice",
-cat:"rice",
-price:650,
-desc:"Fresh chicken fried rice.",
-image:"https://images.unsplash.com/photo-1603133872878-684f208fb84b"
-},
-
-/* BREAD */
-
-{
-name:"Roti",
-cat:"bread",
-price:60,
-desc:"Fresh soft roti.",
-image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7"
-},
-
-{
-name:"Plain Naan",
-cat:"bread",
-price:100,
-desc:"Fresh soft naan.",
-image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7"
-},
-
-{
-name:"Garlic Naan",
-cat:"bread",
-price:180,
-desc:"Garlic naan.",
-image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7"
-},
-
-{
-name:"Paratha",
-cat:"bread",
-price:150,
-desc:"Crispy traditional paratha.",
-image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7"
-},
-
-/* DESSERT */
-
-{
-name:"Kheer",
-cat:"dessert",
-price:180,
-desc:"Traditional creamy kheer.",
-image:"https://images.unsplash.com/photo-1571877227200-a0d98ea607e9"
-},
-
-{
-name:"Gulab Jamun",
-cat:"dessert",
-price:180,
-desc:"Soft sweet gulab jamun.",
-image:"https://images.unsplash.com/photo-1666190094765-4e7f6f6f6c3e"
-},
-
-{
-name:"Ice Cream",
-cat:"dessert",
-price:250,
-desc:"Cold creamy ice cream.",
-image:"https://images.unsplash.com/photo-1563805042-7684c019e1cb"
-}
-
-];
-
-
-/* =====================================================
-   DRINKS
-   NOTE:
-   Exact branded images should be added later rather
-   than incorrectly showing another drink.
-===================================================== */
-
-const drinks = [
-
-{
-name:"Pepsi",
-price:150,
-desc:"Chilled Pepsi",
-image:"https://images.unsplash.com/photo-1629203849820-fdd70d49c38e"
-},
-
-{
-name:"Coca-Cola",
-price:150,
-desc:"Chilled Coca-Cola",
-image:"https://images.unsplhttps://hotelwebsite-1-xo56.onrender.comash.com/photo-1629203849820-fdd70d49c38e"
-},
-
-{
-name:"Sprite",
-price:150,
-desc:"Refreshing Sprite",
-image:"https://images.unsplash.com/photo-1629203849820-fdd70d49c38e"
-},
-
-{
-name:"Fanta",
-price:150,
-desc:"Cold Fanta",
-image:"https://images.unsplash.com/photo-1629203849820-fdd70d49c38e"
-},
-
-{
-name:"7UP",
-price:150,
-desc:"Refreshing 7UP",
-image:"https://images.unsplash.com/photo-1629203849820-fdd70d49c38e"
-},
-
-{
-name:"Mountain Dew",
-price:150,
-desc:"Chilled Mountain Dew",
-image:"https://images.unsplash.com/photo-1629203849820-fdd70d49c38e"
-},
-
-{
-name:"Mineral Water",
-price:100,
-desc:"Chilled bottled water",
-image:"https://images.unsplash.com/photo-1548839140-29a749e1cf4d"
-},
-
-{
-name:"Sweet Lassi",
-price:220,
-desc:"Traditional sweet lassi",
-image:"https://images.unsplash.com/photo-1551024709-8f23befc6f87"
-},
-
-{
-name:"Mango Lassi",
-price:280,
-desc:"Fresh mango lassi",
-image:"https://images.unsplash.com/photo-1551024709-8f23befc6f87"
-},
-
-{
-name:"Shikanjabeen",
-price:180,
-desc:"Fresh lemonade",
-image:"https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd"
-},
-
-{
-name:"Tea",
-price:100,
-desc:"Hot Pakistani tea",
-image:"https://images.unsplash.com/photo-1544787219-7f47ccb76574"
-}
-
-];
-
-
-/* =====================================================
-   MENU DISPLAY
-===================================================== */
-
-let selectedCategory="all";
-let cart=[];
-
-function renderMenu(){
-
-    const search =
-        document
-        .getElementById("search")
-        .value
-        .toLowerCase();
-
-    const filtered =
-        products.filter(item=>{
-
-            const categoryMatch =
-                selectedCategory==="all" ||
-                item.cat===selectedCategory;
-
-            const searchMatch =
-                item.name
-                .toLowerCase()
-                .includes(search);
-
-            return categoryMatch && searchMatch;
-        });
-
-    document.getElementById("menuGrid").innerHTML =
-        filtered.map(item=>`
-
-        <div class="food-card">
-
-            <img
-                src="${item.image}?auto=format&fit=crop&w=700&q=85"
-                alt="${item.name}"
-            >
-
-            <div class="food-info">
-
-                <h3>${item.name}</h3>
-
-                <p>${item.desc}</p>
-
-                <div class="price">
-                    Rs. ${item.price.toLocaleString()}
                 </div>
 
-                <button
-                    class="add-btn"
-                    onclick="addToCart('${item.name}',${item.price})"
-                >
-                    🛒 Add to Cart
-                </button>
 
-            </div>
+                <div class="contact-card">
 
-        </div>
+                    <h3>🍽️ Amin Kabab House</h3>
 
-        `).join("");
+                    <p>
+                        Authentic Pakistani BBQ, kababs and
+                        traditional desi food.
+                    </p>
 
-}
+                    <p>
+                        Come hungry. Leave happy.
+                    </p>
 
+                    <a href="#menu" class="btn btn-outline">
+                        Explore Menu
+                    </a>
 
-/* =====================================================
-   DRINK DISPLAY
-===================================================== */
-
-function renderDrinks(){
-
-    document.getElementById("drinkGrid").innerHTML =
-        drinks.map(item=>`
-
-        <div class="food-card">
-
-            <img
-                src="${item.image}?auto=format&fit=crop&w=700&q=85"
-                alt="${item.name}"
-            >
-
-            <div class="food-info">
-
-                <h3>${item.name}</h3>
-
-                <p>${item.desc}</p>
-
-                <div class="price">
-                    Rs. ${item.price}
                 </div>
 
-                <button
-                    class="add-btn"
-                    onclick="addToCart('${item.name}',${item.price})"
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <h2>
+                    Amin Kabab House
+                </h2>
+
+                <p>
+                    Authentic Pakistani taste, freshly prepared
+                    with passion and served with pride.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>Quick Links</h4>
+
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#menu">Our Menu</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>Contact</h4>
+
+                <a href="tel:03498037743">
+                    03498 037743
+                </a>
+
+                <a
+                    href="https://wa.me/923498037743"
+                    target="_blank"
                 >
-                    🛒 Add to Cart
-                </button>
+                    WhatsApp
+                </a>
 
             </div>
 
         </div>
 
-        `).join("");
 
-}
+        <div class="developer">
 
+            © 2026 Amin Kabab House. All Rights Reserved.
 
-/* =====================================================
-   FILTER
-===================================================== */
+            <br>
 
-function filterMenu(category,button){
+            <span>
+                Website Designed & Developed by
+                <strong>Mohammed Ammar Umer</strong>
+            </span>
 
-    selectedCategory=category;
+        </div>
 
-    document
-    .querySelectorAll(".filters button")
-    .forEach(btn=>{
-        btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-
-    renderMenu();
-}
+    </footer>
 
 
-/* =====================================================
-   CART
-===================================================== */
+    <!-- ================= FLOATING WHATSAPP ================= -->
 
-function addToCart(name,price){
-
-    cart.push({
-        name:name,
-        price:price
-    });
-
-    updateCart();
-
-    openCart();
-}
-
-
-function updateCart(){
-
-    const container =
-        document.getElementById("cartItems");
-
-    if(cart.length===0){
-
-        container.innerHTML =
-            "<p>Your cart is empty.</p>";
-
-    }else{
-
-        container.innerHTML =
-            cart.map((item,index)=>`
-
-            <div class="cart-item">
-
-                <span>
-                    ${index+1}. ${item.name}
-                </span>
-
-                <b>
-                    Rs. ${item.price.toLocaleString()}
-                </b>
-
-            </div>
-
-            `).join("");
-    }
-
-    const total =
-        cart.reduce(
-            (sum,item)=>sum+item.price,
-            0
-        );
-
-    document.getElementById("cartTotal")
-    .innerText =
-        "Total: Rs. " +
-        total.toLocaleString();
-}
-
-
-function openCart(){
-
-    document
-    .getElementById("cart")
-    .classList.add("show");
-
-}
-
-
-function closeCart(){
-
-    document
-    .getElementById("cart")
-    .classList.remove("show");
-
-}
-
-
-/* =====================================================
-   WHATSAPP
-===================================================== */
-
-function sendWhatsAppOrder(){
-
-    if(cart.length===0){
-
-        alert("Please add food to your cart first.");
-
-        return;
-    }
-
-    let message =
-        "Assalam-o-Alaikum Amin Kabab House,%0A%0A" +
-        "My Order:%0A";
-
-    cart.forEach((item,index)=>{
-
-        message +=
-            (index+1) +
-            ". " +
-            item.name +
-            " - Rs. " +
-            item.price +
-            "%0A";
-
-    });
-
-    const total =
-        cart.reduce(
-            (sum,item)=>sum+item.price,
-            0
-        );
-
-    message +=
-        "%0ATotal: Rs. " +
-        total +
-        "%0A%0A" +
-        "Please confirm my order.";
-
-    window.open(
-        "https://wa.me/925827442350?text="+message,
-        "_blank"
-    );
-
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-document
-.getElementById("search")
-.addEventListener(
-    "input",
-    renderMenu
-);
-
-
-/* INITIAL LOAD */
-
-renderMenu();
-renderDrinks();
-
-</script>
+    <a
+        href="https://wa.me/923498037743"
+        class="whatsapp"
+        target="_blank"
+        aria-label="Chat on WhatsApp"
+    >
+        WA
+    </a>
 
 </body>
 </html>
