@@ -1,38 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="theme-color" content="#0b0b0b">
-
-    <meta name="description"
-          content="Amin Kabab House — Authentic Pakistani BBQ, Kababs, Karahi, Handi, Rice, Fast Food and refreshing drinks.">
-
-    <title>Amin Kabab House | Authentic Taste</title>
+    <title>Amin Kabab Hotel | Mirpur AJK</title>
 
     <style>
-
-        /* =========================================================
-           AMIN KABAB HOUSE
-           Premium Restaurant Homepage
-        ========================================================= */
-
-        :root {
-            --gold: #d9a441;
-            --gold-light: #f1c76a;
-            --dark: #080808;
-            --dark-2: #101010;
-            --dark-3: #171717;
-            --card: #151515;
-            --border: rgba(255,255,255,.09);
-            --text: #ffffff;
-            --muted: #a8a8a8;
-            --green: #20c76b;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -44,1156 +19,2700 @@
         }
 
         body {
-            background: var(--dark);
-            color: var(--text);
-            font-family:
-                Inter,
-                Arial,
-                Helvetica,
-                sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0d0d0d;
+            color: #ffffff;
         }
 
-        body::selection {
-            background: var(--gold);
-            color: #111;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            font-family: inherit;
-        }
-
-        img {
-            width: 100%;
-            display: block;
-        }
-
-        .container {
-            width: min(1180px, calc(100% - 40px));
-            margin: auto;
-        }
-
-        /* =========================================================
-           TOP BAR
-        ========================================================= */
-
-        .topbar {
-            background: #050505;
-            border-bottom: 1px solid var(--border);
-            color: #bdbdbd;
-            font-size: 12px;
-        }
-
-        .topbar-inner {
-            min-height: 38px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .topbar-left,
-        .topbar-right {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .topbar-item {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .gold {
-            color: var(--gold);
-        }
-
-        /* =========================================================
-           NAVBAR
-        ========================================================= */
-
+        /* NAVBAR */
         .navbar {
-            position: sticky;
+            width: 100%;
+            position: absolute;
             top: 0;
-            z-index: 1000;
-            background: rgba(8,8,8,.93);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-inner {
-            min-height: 78px;
+            left: 0;
+            z-index: 10;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 25px;
-        }
-
-        .brand {
-            display: flex;
             align-items: center;
-            gap: 12px;
+            padding: 22px 7%;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(8px);
         }
 
-        .brand-mark {
-            width: 45px;
-            height: 45px;
-            border: 1px solid rgba(217,164,65,.55);
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            color: var(--gold);
-            font-size: 22px;
-            background: rgba(217,164,65,.05);
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
-        .brand-name {
-            font-size: 21px;
-            font-weight: 900;
-            letter-spacing: -.4px;
-        }
-
-        .brand-sub {
-            display: block;
-            color: var(--gold);
-            font-size: 9px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: -2px;
+        .logo span {
+            color: #e6a21a;
         }
 
         .nav-links {
             display: flex;
-            align-items: center;
-            gap: 27px;
+            gap: 28px;
+            list-style: none;
         }
 
         .nav-links a {
-            color: #d5d5d5;
-            font-size: 13px;
-            font-weight: 700;
-            transition: .25s;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--gold);
+            color: #e6a21a;
         }
 
-        .nav-order {
-            background: var(--gold);
-            color: #111 !important;
-            padding: 11px 17px;
-            border-radius: 7px;
-            box-shadow: 0 8px 25px rgba(217,164,65,.12);
-        }
-
-        .nav-order:hover {
-            background: #fff !important;
-            transform: translateY(-2px);
-        }
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-
+        /* HERO */
         .hero {
-            min-height: 700px;
-            position: relative;
+            min-height: 100vh;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+
             background:
                 linear-gradient(
                     90deg,
-                    rgba(5,5,5,.97) 0%,
-                    rgba(5,5,5,.84) 38%,
-                    rgba(5,5,5,.43) 70%,
-                    rgba(5,5,5,.66) 100%
+                    rgba(0,0,0,0.92) 0%,
+                    rgba(0,0,0,0.72) 45%,
+                    rgba(0,0,0,0.30) 100%
                 ),
-                url("https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=1900&q=90")
-                center/cover no-repeat;
-        }
+                url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1800&q=85");
 
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: auto 0 0;
-            height: 130px;
-            background: linear-gradient(transparent, var(--dark));
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 105px 0 130px;
-            max-width: 760px;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding-top: 70px;
         }
 
-        .eyebrow {
-            color: var(--gold-light);
-            font-size: 12px;
-            font-weight: 900;
-            letter-spacing: 4px;
+        .small-title {
+            color: #e6a21a;
             text-transform: uppercase;
-            margin-bottom: 17px;
+            letter-spacing: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(50px, 7vw, 86px);
-            line-height: .98;
-            letter-spacing: -3px;
+            max-width: 750px;
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 0.98;
+            font-weight: 900;
             margin-bottom: 25px;
         }
 
         .hero h1 span {
-            color: var(--gold);
+            color: #e6a21a;
         }
 
-        .hero-text {
-            max-width: 630px;
-            color: #d0d0d0;
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 31px;
+        .hero p {
+            max-width: 620px;
+            color: #dddddd;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 35px;
         }
 
-        .hero-buttons {
+        .buttons {
             display: flex;
-            align-items: center;
+            gap: 15px;
             flex-wrap: wrap;
-            gap: 13px;
         }
 
         .btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 50px;
-            padding: 0 22px;
-            border-radius: 7px;
-            font-size: 13px;
-            font-weight: 900;
-            transition: .3s ease;
-            cursor: pointer;
+            display: inline-block;
+            padding: 15px 27px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
         .btn-primary {
-            background: var(--gold);
+            background: #e6a21a;
             color: #111;
-            box-shadow: 0 12px 35px rgba(217,164,65,.16);
         }
 
         .btn-primary:hover {
-            background: #fff;
             transform: translateY(-3px);
+            background: #f3b52f;
         }
 
-        .btn-dark {
-            border: 1px solid rgba(255,255,255,.22);
+        .btn-outline {
+            border: 1px solid #ffffff;
             color: white;
-            background: rgba(255,255,255,.04);
         }
 
-        .btn-dark:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-            transform: translateY(-3px);
+        .btn-outline:hover {
+            background: white;
+            color: #111;
         }
 
-        .hero-note {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            margin-top: 24px;
-            color: #999;
-            font-size: 12px;
-        }
-
-        .hero-note-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--green);
-            box-shadow: 0 0 12px rgba(32,199,107,.7);
-        }
-
-        /* =========================================================
-           TRUST STRIP
-        ========================================================= */
-
-        .trust-strip {
-            position: relative;
-            z-index: 5;
-            margin-top: -42px;
-        }
-
-        .trust-grid {
+        /* FEATURE BAR */
+        .features {
+            background: #151515;
+            padding: 30px 7%;
             display: grid;
-            grid-template-columns: repeat(4,1fr);
-            background: #111;
-            border: 1px solid var(--border);
-            border-radius: 13px;
-            overflow: hidden;
-            box-shadow: 0 20px 70px rgba(0,0,0,.35);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            border-bottom: 1px solid #292929;
         }
 
-        .trust-card {
-            padding: 23px 20px;
-            border-right: 1px solid var(--border);
+        .feature {
             text-align: center;
+            padding: 10px;
         }
 
-        .trust-card:last-child {
-            border-right: 0;
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 8px;
         }
 
-        .trust-icon {
-            color: var(--gold);
-            font-size: 21px;
+        .feature h3 {
+            font-size: 17px;
             margin-bottom: 6px;
         }
 
-        .trust-card strong {
-            display: block;
-            font-size: 14px;
+        .feature p {
+            color: #999;
+            font-size: 13px;
         }
 
-        .trust-card span {
-            display: block;
-            color: #888;
-            font-size: 11px;
-            margin-top: 2px;
-        }
-
-        /* =========================================================
-           SECTION HEADER
-        ========================================================= */
-
-        .section {
-            padding: 105px 0;
-        }
-
-        .section-head {
+        /* INTRO */
+        .intro {
+            padding: 100px 7%;
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 55px;
-        }
-
-        .section-kicker {
-            color: var(--gold);
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        .section-head h2 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(35px,5vw,54px);
-            line-height: 1.1;
-            margin-top: 9px;
-        }
-
-        .section-head p {
-            color: var(--muted);
-            font-size: 14px;
-            margin-top: 15px;
-        }
-
-        /* =========================================================
-           ABOUT
-        ========================================================= */
-
-        .about-section {
-            background:
-                radial-gradient(
-                    circle at 10% 20%,
-                    rgba(217,164,65,.06),
-                    transparent 30%
-                ),
-                var(--dark);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: .95fr 1.05fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .about-photo {
-            min-height: 500px;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            background:
-                linear-gradient(
-                    rgba(0,0,0,.15),
-                    rgba(0,0,0,.15)
-                ),
-                url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1100&q=90")
-                center/cover;
-            border: 1px solid var(--border);
-        }
-
-        .about-badge {
-            position: absolute;
-            left: 22px;
-            bottom: 22px;
-            background: rgba(8,8,8,.88);
-            border: 1px solid rgba(217,164,65,.35);
-            border-radius: 10px;
-            padding: 15px 18px;
-        }
-
-        .about-badge strong {
-            display: block;
-            color: var(--gold);
-            font-size: 21px;
-        }
-
-        .about-badge span {
-            color: #aaa;
-            font-size: 11px;
-        }
-
-        .about-content .section-kicker {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .about-content h2 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(34px,4vw,50px);
-            line-height: 1.1;
-            margin-bottom: 21px;
-        }
-
-        .about-content h2 span {
-            color: var(--gold);
-        }
-
-        .about-content p {
-            color: #999;
-            font-size: 14px;
-            line-height: 1.9;
-            margin-bottom: 15px;
-        }
-
-        .check-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 13px;
-            margin: 26px 0 30px;
-        }
-
-        .check-list li {
-            color: #ddd;
-            font-size: 13px;
-        }
-
-        .check-list li::before {
-            content: "✓";
-            color: var(--gold);
-            font-weight: 900;
-            margin-right: 8px;
-        }
-
-        /* =========================================================
-           MENU
-        ========================================================= */
-
-        .menu-section {
             background: #0d0d0d;
-            border-top: 1px solid rgba(255,255,255,.025);
         }
 
-        .menu-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 38px;
-        }
-
-        .filter-btn {
-            background: #141414;
-            color: #999;
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            padding: 10px 17px;
-            font-size: 11px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: .25s;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--gold);
-            color: #111;
-            border-color: var(--gold);
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 20px;
-        }
-
-        .menu-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 13px;
-            overflow: hidden;
-            transition: .35s ease;
-            position: relative;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-7px);
-            border-color: rgba(217,164,65,.45);
-            box-shadow: 0 18px 45px rgba(0,0,0,.25);
-        }
-
-        .menu-card.hide {
-            display: none;
-        }
-
-        .menu-image {
-            height: 225px;
-            position: relative;
-            overflow: hidden;
-            background: #222;
-        }
-
-        .menu-image img {
-            height: 100%;
-            object-fit: cover;
-            transition: .5s;
-        }
-
-        .menu-card:hover .menu-image img {
-            transform: scale(1.06);
-        }
-
-        .menu-tag {
-            position: absolute;
-            top: 13px;
-            left: 13px;
-            background: rgba(8,8,8,.84);
-            border: 1px solid rgba(255,255,255,.13);
-            color: #fff;
-            border-radius: 20px;
-            padding: 5px 9px;
-            font-size: 9px;
-            font-weight: 900;
+        .intro-label {
+            color: #e6a21a;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 14px;
         }
 
-        .menu-info {
-            padding: 20px;
+        .intro h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 20px;
         }
 
-        .menu-title-row {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 15px;
-            margin-bottom: 7px;
-        }
-
-        .menu-title-row h3 {
-            font-size: 17px;
-            line-height: 1.25;
-        }
-
-        .menu-price {
-            color: var(--gold-light);
-            font-size: 14px;
-            font-weight: 900;
-            white-space: nowrap;
-        }
-
-        .menu-info p {
-            color: #858585;
-            font-size: 12px;
-            line-height: 1.7;
-        }
-
-        .menu-bottom {
-            margin-top: 15px;
-            padding-top: 13px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .stars {
-            color: var(--gold);
-            letter-spacing: 2px;
-            font-size: 10px;
-        }
-
-        .menu-order {
+        .intro p {
+            max-width: 720px;
+            margin: auto;
             color: #aaa;
-            font-size: 10px;
-            font-weight: 800;
-        }
-
-        .menu-order:hover {
-            color: var(--gold);
-        }
-
-        /* =========================================================
-           SPECIAL EXPERIENCE
-        ========================================================= */
-
-        .experience-section {
-            background: #111;
-        }
-
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 18px;
-        }
-
-        .experience-card {
-            min-height: 230px;
-            padding: 30px;
-            border: 1px solid var(--border);
-            border-radius: 13px;
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(217,164,65,.06),
-                    transparent 55%
-                ),
-                #151515;
-            transition: .3s;
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(217,164,65,.4);
-        }
-
-        .experience-icon {
-            font-size: 30px;
-            margin-bottom: 18px;
-        }
-
-        .experience-card h3 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 24px;
-            margin-bottom: 9px;
-        }
-
-        .experience-card p {
-            color: #888;
-            font-size: 12px;
             line-height: 1.8;
+            font-size: 16px;
         }
 
-        /* =========================================================
-           FEATURED BANNER
-        ========================================================= */
+        /* MOBILE */
+        @media (max-width: 768px) {
 
-        .feature-banner {
-            padding: 105px 0;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0,0,0,.91),
-                    rgba(0,0,0,.62)
-                ),
-                url("https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1900&q=90")
-                center/cover fixed;
-        }
+            .navbar {
+                padding: 18px 5%;
+            }
 
-        .banner-content {
-            max-width: 650px;
-        }
-
-        .banner-content .section-kicker {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .banner-content h2 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(38px,5vw,60px);
-            line-height: 1.05;
-            margin-bottom: 17px;
-        }
-
-        .banner-content h2 span {
-            color: var(--gold);
-        }
-
-        .banner-content p {
-            color: #bbb;
-            font-size: 14px;
-            max-width: 570px;
-            margin-bottom: 25px;
-        }
-
-        /* =========================================================
-           CONTACT
-        ========================================================= */
-
-        .contact-section {
-            background: var(--dark);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .contact-card {
-            background: #121212;
-            border: 1px solid var(--border);
-            border-radius: 13px;
-            padding: 32px;
-        }
-
-        .contact-card h3 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .contact-card > p {
-            color: #888;
-            font-size: 13px;
-            margin-bottom: 22px;
-        }
-
-        .contact-item {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-            margin: 19px 0;
-        }
-
-        .contact-icon {
-            width: 38px;
-            height: 38px;
-            flex: 0 0 38px;
-            display: grid;
-            place-items: center;
-            border-radius: 8px;
-            background: rgba(217,164,65,.09);
-            color: var(--gold);
-        }
-
-        .contact-item strong {
-            display: block;
-            font-size: 13px;
-        }
-
-        .contact-item span,
-        .contact-item a {
-            color: #888;
-            font-size: 12px;
-        }
-
-        .contact-item a:hover {
-            color: var(--gold);
-        }
-
-        .phone-large {
-            font-size: clamp(25px,4vw,36px) !important;
-            font-weight: 900 !important;
-            color: #fff !important;
-        }
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        footer {
-            background: #050505;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-main {
-            padding: 65px 0 42px;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 55px;
-        }
-
-        .footer-brand h2 {
-            font-family: Georgia, "Times New Roman", serif;
-            color: var(--gold);
-            font-size: 29px;
-            margin-bottom: 9px;
-        }
-
-        .footer-brand p {
-            max-width: 360px;
-            color: #777;
-            font-size: 12px;
-            line-height: 1.8;
-        }
-
-        .footer-col h4 {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #fff;
-            margin-bottom: 17px;
-        }
-
-        .footer-col a {
-            display: block;
-            color: #777;
-            font-size: 12px;
-            margin: 9px 0;
-            transition: .2s;
-        }
-
-        .footer-col a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding: 21px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            color: #5e5e5e;
-            font-size: 10px;
-        }
-
-        .developer {
-            text-align: right;
-        }
-
-        .developer strong {
-            color: var(--gold);
-        }
-
-        /* =========================================================
-           FLOATING WHATSAPP
-        ========================================================= */
-
-        .whatsapp-float {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 2000;
-            width: 57px;
-            height: 57px;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            background: var(--green);
-            color: white;
-            font-weight: 900;
-            font-size: 11px;
-            box-shadow: 0 10px 35px rgba(0,0,0,.45);
-            transition: .3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.09);
-        }
-
-        /* =========================================================
-           BACK TO TOP
-        ========================================================= */
-
-        .back-top {
-            position: fixed;
-            right: 20px;
-            bottom: 88px;
-            z-index: 1999;
-            width: 40px;
-            height: 40px;
-            display: grid;
-            place-items: center;
-            border-radius: 8px;
-            background: #191919;
-            border: 1px solid var(--border);
-            color: var(--gold);
-            opacity: 0;
-            pointer-events: none;
-            transition: .3s;
-            cursor: pointer;
-        }
-
-        .back-top.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        /* =========================================================
-           MOBILE BOTTOM BAR
-        ========================================================= */
-
-        .mobile-bar {
-            display: none;
-        }
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-
-        @media (max-width: 950px) {
+            .logo {
+                font-size: 20px;
+            }
 
             .nav-links {
-                gap: 14px;
-            }
-
-            .nav-links a:not(.nav-order) {
                 display: none;
             }
 
             .hero {
-                min-height: 650px;
-            }
-
-            .trust-grid {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .trust-card:nth-child(2) {
-                border-right: 0;
-            }
-
-            .trust-card:nth-child(-n+2) {
-                border-bottom: 1px solid var(--border);
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .about-photo {
-                min-height: 450px;
-            }
-
-            .menu-grid {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .experience-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 620px) {
-
-            .container {
-                width: min(100% - 28px, 1180px);
-            }
-
-            .topbar {
-                display: none;
-            }
-
-            .nav-inner {
-                min-height: 68px;
-            }
-
-            .brand-name {
-                font-size: 18px;
-            }
-
-            .brand-mark {
-                width: 39px;
-                height: 39px;
-                font-size: 18px;
-            }
-
-            .nav-order {
-                padding: 9px 12px;
-                font-size: 10px !important;
-            }
-
-            .hero {
-                min-height: 640px;
-                background:
-                    linear-gradient(
-                        90deg,
-                        rgba(5,5,5,.91),
-                        rgba(5,5,5,.68)
-                    ),
-                    url("https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=1200&q=85")
-                    center/cover;
+                min-height: 90vh;
+                background-position: center;
             }
 
             .hero-content {
-                padding: 80px 0 110px;
+                width: 90%;
+                padding-top: 90px;
             }
 
             .hero h1 {
-                font-size: 51px;
-                letter-spacing: -2px;
+                font-size: 48px;
             }
 
-            .hero-text {
-                font-size: 14px;
+            .hero p {
+                font-size: 16px;
             }
 
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .trust-strip {
-                margin-top: -25px;
-            }
-
-            .trust-card {
-                padding: 18px 10px;
-            }
-
-            .section {
-                padding: 75px 0;
-            }
-
-            .about-photo {
-                min-height: 340px;
-            }
-
-            .check-list {
+            .features {
                 grid-template-columns: 1fr;
+                padding: 25px 8%;
             }
 
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .menu-image {
-                height: 240px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .developer {
-                text-align: left;
-            }
-
-            .mobile-bar {
-                position: fixed;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                left: 10px;
-                right: 10px;
-                bottom: 10px;
-                z-index: 1500;
-                border: 1px solid rgba(255,255,255,.12);
-                border-radius: 10px;
-                overflow: hidden;
-                background: rgba(12,12,12,.95);
-                backdrop-filter: blur(15px);
-                box-shadow: 0 10px 40px rgba(0,0,0,.5);
-            }
-
-            .mobile-bar a {
-                min-height: 47px;
-                display: grid;
-                place-items: center;
-                font-size: 11px;
-                font-weight: 900;
-            }
-
-            .mobile-call {
-                color: #111;
-                background: var(--gold);
-            }
-
-            .mobile-whatsapp {
-                color: white;
-                background: #159d51;
-            }
-
-            .whatsapp-float {
-                display: none;
-            }
-
-            .back-top {
-                bottom: 68px;
-                right: 14px;
+            .intro {
+                padding: 70px 7%;
             }
         }
-
     </style>
 </head>
 
-
 <body>
 
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            Amin <span>Kabab Hotel</span>
+        </div>
 
-    <!-- =========================================================
-         TOP INFORMATION BAR
-    ========================================================= -->
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <div class="topbar">
 
-        <div class="container topbar-inner">
+    <!-- HERO SECTION -->
+    <section class="hero">
 
-            <div class="topbar-left">
+        <div class="hero-content">
 
-                <div class="topbar-item">
-                    <span class="gold">●</span>
-                    Freshly Prepared
+            <div class="small-title">
+                Welcome to Amin Kabab Hotel
+            </div>
+
+            <h1>
+                Taste the <span>Real</span><br>
+                Flavour.
+            </h1>
+
+            <p>
+                Freshly prepared kababs, tikka, karahi, handi
+                and delicious Pakistani food — served with
+                authentic taste in Mirpur, Azad Kashmir.
+            </p>
+
+            <div class="buttons">
+                <a href="#menu" class="btn btn-primary">
+                    Explore Menu
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Us
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features">
+
+        <div class="feature">
+            <div class="feature-icon">🔥</div>
+            <h3>Fresh & Delicious</h3>
+            <p>Freshly prepared food with authentic taste.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🍽️</div>
+            <h3>Pakistani Cuisine</h3>
+            <p>Kabab, Tikka, Karahi, Handi and much more.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">⭐</div>
+            <h3>Quality Service</h3>
+            <p>Good food and a great experience for our customers.</p>
+        </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="intro" id="about">
+
+        <div class="intro-label">
+            Our Story
+        </div>
+
+        <h2>
+            Made With Taste,
+            Served With Love.
+        </h2>
+
+        <p>
+            Amin Kabab Hotel brings you delicious Pakistani
+            cuisine prepared with care and traditional flavours.
+            From juicy kababs and tikka to rich karahi and handi,
+            there is something for everyone.
+        </p>
+
+    </section>
+
+
+    <!-- MENU PLACEHOLDER -->
+    <section id="menu" style="padding: 80px 7%; text-align:center; background:#151515;">
+        <div class="intro-label">Coming Next</div>
+        <h2 style="font-size:40px; margin-bottom:15px;">
+            Our Special Menu
+        </h2>
+        <p style="color:#aaa;">
+            Food menu cards will be added in Step 2.
+        </p>
+    </section>
+
+
+    <!-- CONTACT PLACEHOLDER -->
+    <section id="contact" style="padding:80px 7%; text-align:center; background:#0d0d0d;">
+        <div class="intro-label">Visit Us</div>
+        <h2 style="font-size:40px; margin-bottom:15px;">
+            Amin Kabab Hotel
+        </h2>
+        <p style="color:#aaa;">
+            Mirpur, Azad Kashmir
+        </p>
+    </section>
+
+</body>
+</html><!-- STEP 2: PREMIUM HEADER -->
+<header class="main-header">
+
+    <div class="logo-area">
+        <div class="logo-circle">AK</div>
+
+        <div class="brand-name">
+            <h2>Amin Kabab Hotel</h2>
+            <span>Authentic Taste • Mirpur AJK</span>
+        </div>
+    </div>
+
+    <nav class="navigation">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#deals">Deals</a>
+        <a href="#drinks">Drinks</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="order-btn" onclick="alert('Welcome to Amin Kabab Hotel!')">
+        🛒 Order Now
+    </button>
+
+</header>
+
+<style>
+
+.main-header {
+    width: 100%;
+    min-height: 85px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 5%;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-circle {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #d4a017;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid white;
+}
+
+.brand-name h2 {
+    margin: 0;
+    color: white;
+    font-size: 21px;
+}
+
+.brand-name span {
+    color: #d4a017;
+    font-size: 11px;
+}
+
+.navigation {
+    display: flex;
+    gap: 25px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: #d4a017;
+}
+
+.order-btn {
+    background: #d4a017;
+    color: #111;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    transform: scale(1.05);
+    background: #f0c43c;
+}
+
+/* Mobile */
+@media (max-width: 850px) {
+
+    .main-header {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .logo-area {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navigation {
+        width: 100%;
+        justify-content: center;
+        gap: 13px;
+        flex-wrap: wrap;
+    }
+
+    .navigation a {
+        font-size: 13px;
+    }
+
+    .order-btn {
+        padding: 10px 18px;
+    }
+}
+
+</style><!-- ==========================================
+     STEP 3 — EXTENDED PREMIUM FOOD MENU
+========================================== -->
+
+<section id="menu" class="menu-section">
+
+    <div class="menu-title">
+        <span>🍽️ OUR SPECIAL MENU</span>
+        <h2>Delicious Food & <b>Authentic Taste</b></h2>
+        <p>
+            Freshly prepared food with the traditional taste
+            of Amin Kabab Hotel.
+        </p>
+    </div>
+
+    <div class="menu-container">
+
+        <!-- 1 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=85" alt="Seekh Kabab">
+            <div class="menu-info">
+                <small>SPECIAL</small>
+                <h3>Seekh Kabab</h3>
+                <p>Juicy traditional seekh kabab, perfectly grilled.</p>
+                <div class="price-row">
+                    <strong>Rs. 450</strong>
+                    <button onclick="alert('Seekh Kabab added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=85" alt="Chicken Tikka">
+            <div class="menu-info">
+                <small>POPULAR</small>
+                <h3>Chicken Tikka</h3>
+                <p>Smoky grilled chicken with special spices.</p>
+                <div class="price-row">
+                    <strong>Rs. 550</strong>
+                    <button onclick="alert('Chicken Tikka added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=85" alt="Chicken Karahi">
+            <div class="menu-info">
+                <small>CHEF'S CHOICE</small>
+                <h3>Chicken Karahi</h3>
+                <p>Traditional karahi cooked with fresh tomatoes.</p>
+                <div class="price-row">
+                    <strong>Rs. 1,200</strong>
+                    <button onclick="alert('Chicken Karahi added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=85" alt="Chicken Handi">
+            <div class="menu-info">
+                <small>HOT</small>
+                <h3>Chicken Handi</h3>
+                <p>Creamy and flavorful chicken handi.</p>
+                <div class="price-row">
+                    <strong>Rs. 1,100</strong>
+                    <button onclick="alert('Chicken Handi added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=85" alt="Chicken Biryani">
+            <div class="menu-info">
+                <small>FAVOURITE</small>
+                <h3>Chicken Biryani</h3>
+                <p>Fragrant basmati rice with chicken and spices.</p>
+                <div class="price-row">
+                    <strong>Rs. 350</strong>
+                    <button onclick="alert('Chicken Biryani added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=85" alt="Special Burger">
+            <div class="menu-info">
+                <small>FAST FOOD</small>
+                <h3>Special Burger</h3>
+                <p>Loaded burger with crispy chicken and fresh salad.</p>
+                <div class="price-row">
+                    <strong>Rs. 450</strong>
+                    <button onclick="alert('Special Burger added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=85" alt="Special Pizza">
+            <div class="menu-info">
+                <small>HOT & FRESH</small>
+                <h3>Special Pizza</h3>
+                <p>Cheesy pizza loaded with delicious toppings.</p>
+                <div class="price-row">
+                    <strong>Rs. 1,000</strong>
+                    <button onclick="alert('Special Pizza added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=85" alt="Tandoori Roti">
+            <div class="menu-info">
+                <small>FRESH</small>
+                <h3>Tandoori Roti</h3>
+                <p>Fresh hot roti straight from the tandoor.</p>
+                <div class="price-row">
+                    <strong>Rs. 40</strong>
+                    <button onclick="alert('Tandoori Roti added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Mutton Karahi">
+            <div class="menu-info">
+                <small>SPECIAL</small>
+                <h3>Mutton Karahi</h3>
+                <p>Tender mutton cooked in rich traditional masala.</p>
+                <div class="price-row">
+                    <strong>Rs. 1,600</strong>
+                    <button onclick="alert('Mutton Karahi added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1532636615-9d0b8e7d7d0e?auto=format&fit=crop&w=800&q=85" alt="Chicken Malai Tikka">
+            <div class="menu-info">
+                <small>CREAMY</small>
+                <h3>Malai Tikka</h3>
+                <p>Soft and creamy chicken tikka with mild spices.</p>
+                <div class="price-row">
+                    <strong>Rs. 650</strong>
+                    <button onclick="alert('Malai Tikka added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=85" alt="Fried Chicken">
+            <div class="menu-info">
+                <small>CRISPY</small>
+                <h3>Fried Chicken</h3>
+                <p>Crispy golden chicken with our special seasoning.</p>
+                <div class="price-row">
+                    <strong>Rs. 550</strong>
+                    <button onclick="alert('Fried Chicken added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=800&q=85" alt="Naan">
+            <div class="menu-info">
+                <small>FRESH</small>
+                <h3>Special Naan</h3>
+                <p>Freshly baked soft naan from our traditional tandoor.</p>
+                <div class="price-row">
+                    <strong>Rs. 80</strong>
+                    <button onclick="alert('Special Naan added!')">+ Add</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* ==========================================
+   PREMIUM MENU DESIGN
+========================================== */
+
+.menu-section {
+    background: #0d0d0d;
+    padding: 90px 6%;
+    color: white;
+}
+
+.menu-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.menu-title span {
+    color: #d4a017;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.menu-title h2 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.menu-title h2 b {
+    color: #d4a017;
+}
+
+.menu-title p {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.menu-container {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.menu-card {
+    background: #181818;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #292929;
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4a017;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-info {
+    padding: 20px;
+}
+
+.menu-info small {
+    color: #d4a017;
+    font-weight: bold;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.menu-info h3 {
+    font-size: 21px;
+    margin: 8px 0;
+}
+
+.menu-info p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 43px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.price-row strong {
+    color: #d4a017;
+    font-size: 18px;
+}
+
+.price-row button {
+    border: none;
+    background: #d4a017;
+    color: #111;
+    padding: 9px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.price-row button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+
+    .menu-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .menu-section {
+        padding: 60px 18px;
+    }
+
+    .menu-title h2 {
+        font-size: 30px;
+    }
+
+    .menu-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu-card img {
+        height: 230px;
+    }
+
+}
+
+</style><!-- ==========================================
+     STEP 4 — DRINKS & BEVERAGES
+========================================== -->
+
+<section id="drinks" class="drinks-section">
+
+    <div class="drinks-title">
+        <span>🥤 REFRESH YOURSELF</span>
+        <h2>Cold Drinks & <b>Beverages</b></h2>
+        <p>Choose your favourite drink with your meal.</p>
+    </div>
+
+    <div class="drinks-container">
+
+        <!-- PEPSI -->
+        <div class="drink-card">
+            <div class="drink-image">
+                <img
+                    src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=800&q=85"
+                    alt="Pepsi">
+            </div>
+
+            <div class="drink-info">
+                <span>COLA</span>
+                <h3>Pepsi</h3>
+                <p>Chilled Pepsi</p>
+
+                <div class="drink-bottom">
+                    <strong>Rs. 100</strong>
+                    <button onclick="alert('Pepsi added!')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- COCA COLA -->
+        <div class="drink-card">
+            <div class="drink-image">
+                <img
+                    src="https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=800&q=85"
+                    alt="Coca-Cola">
+            </div>
+
+            <div class="drink-info">
+                <span>COLA</span>
+                <h3>Coca-Cola</h3>
+                <p>Ice cold Coca-Cola</p>
+
+                <div class="drink-bottom">
+                    <strong>Rs. 100</strong>
+                    <button onclick="alert('Coca-Cola added!')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 7UP -->
+        <div class="drink-card">
+            <div class="drink-image">
+                <img
+                    src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=85"
+                    alt="7UP">
+            </div>
+
+            <div class="drink-info">
+                <span>LEMON LIME</span>
+                <h3>7UP</h3>
+                <p>Refreshing chilled 7UP</p>
+
+                <div class="drink-bottom">
+                    <strong>Rs. 100</strong>
+                    <button onclick="alert('7UP added!')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SPRITE -->
+        <div class="drink-card">
+            <div class="drink-image">
+                <img
+                    src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=800&q=85"
+                    alt="Sprite">
+            </div>
+
+            <div class="drink-info">
+                <span>LEMON LIME</span>
+                <h3>Sprite</h3>
+                <p>Cold and refreshing Sprite</p>
+
+                <div class="drink-bottom">
+                    <strong>Rs. 100</strong>
+                    <button onclick="alert('Sprite added!')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FANTA -->
+        <div class="drink-card">
+            <div class="drink-image">
+                <img
+                    src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=85"
+                    alt="Fanta">
+            </div>
+
+            <div class="drink-info">
+                <span>ORANGE</span>
+                <h3>Fanta</h3>
+                <p>Sweet and refreshing orange drink</p>
+
+                <div class="drink-bottom">
+                    <strong>Rs. 100</strong>
+                    <button onclick="alert('Fanta added!')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- DEW -->
+        <div class="drink-card">
+            <div class="drink-image">
+                <img
+                    src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=85"
+                    alt="Mountain Dew">
+            </div>
+
+            <div class="drink-info">
+                <span>ENERGY & CITRUS</span>
+                <h3>Mountain Dew</h3>
+                <p>Bold and refreshing Mountain Dew</p>
+
+                <div class="drink-bottom">
+                    <strong>Rs. 100</strong>
+                    <button onclick="alert('Mountain Dew added!')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- WATER -->
+        <div class="drink-card">
+            <div class="drink-image">
+                <img
+                    src="https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=800&q=85"
+                    alt="Mineral Water">
+            </div>
+
+            <div class="drink-info">
+                <span>FRESH</span>
+                <h3>Mineral Water</h3>
+                <p>Fresh chilled mineral water</p>
+
+                <div class="drink-bottom">
+                    <strong>Rs. 80</strong>
+                    <button onclick="alert('Mineral Water added!')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FRESH JUICE -->
+        <div class="drink-card">
+            <div class="drink-image">
+                <img
+                    src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=85"
+                    alt="Fresh Juice">
+            </div>
+
+            <div class="drink-info">
+                <span>FRESH</span>
+                <h3>Fresh Juice</h3>
+                <p>Freshly prepared seasonal fruit juice</p>
+
+                <div class="drink-bottom">
+                    <strong>Rs. 250</strong>
+                    <button onclick="alert('Fresh Juice added!')">
+                        + Add
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* ==========================================
+   DRINKS SECTION DESIGN
+========================================== */
+
+.drinks-section {
+    background: #111;
+    color: white;
+    padding: 90px 6%;
+}
+
+.drinks-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.drinks-title span {
+    color: #d4a017;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.drinks-title h2 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.drinks-title h2 b {
+    color: #d4a017;
+}
+
+.drinks-title p {
+    color: #aaa;
+}
+
+.drinks-container {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.drink-card {
+    background: #1b1b1b;
+    border: 1px solid #292929;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.drink-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4a017;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.drink-image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.drink-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.drink-card:hover img {
+    transform: scale(1.06);
+}
+
+.drink-info {
+    padding: 20px;
+}
+
+.drink-info span {
+    color: #d4a017;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.drink-info h3 {
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+.drink-info p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.drink-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.drink-bottom strong {
+    color: #d4a017;
+    font-size: 18px;
+}
+
+.drink-bottom button {
+    border: none;
+    background: #d4a017;
+    color: #111;
+    padding: 9px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.drink-bottom button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+
+    .drinks-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .drinks-section {
+        padding: 60px 18px;
+    }
+
+    .drinks-title h2 {
+        font-size: 30px;
+    }
+
+    .drinks-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style><!-- ==========================================
+     STEP 5 — SPECIAL DEALS & COMBOS
+========================================== -->
+
+<section id="deals" class="deals-section">
+
+    <div class="deals-title">
+        <span>🔥 TODAY'S SPECIAL OFFERS</span>
+        <h2>Special <b>Deals & Combos</b></h2>
+        <p>
+            Enjoy more food and more value with our special
+            family and friends deals.
+        </p>
+    </div>
+
+    <div class="deals-container">
+
+        <!-- FAMILY DEAL -->
+        <div class="deal-card featured-deal">
+
+            <div class="deal-image">
+                <img
+                    src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=85"
+                    alt="Family BBQ Deal">
+                <span class="deal-badge">BEST VALUE</span>
+            </div>
+
+            <div class="deal-content">
+                <small>👨‍👩‍👧‍👦 FAMILY DEAL</small>
+
+                <h3>Family BBQ Feast</h3>
+
+                <p>
+                    Seekh Kabab, Chicken Tikka, BBQ items,
+                    Naan, Salad and Raita.
+                </p>
+
+                <div class="deal-price">
+                    <strong>Rs. 2,499</strong>
+                    <del>Rs. 2,900</del>
                 </div>
 
-                <div class="topbar-item">
-                    <span class="gold">★</span>
-                    Authentic Pakistani Taste
+                <button onclick="alert('Family BBQ Feast selected!')">
+                    🛒 Order Deal
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- BBQ DEAL -->
+        <div class="deal-card">
+
+            <div class="deal-image">
+                <img
+                    src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=1000&q=85"
+                    alt="BBQ Deal">
+                <span class="deal-badge">POPULAR</span>
+            </div>
+
+            <div class="deal-content">
+                <small>🍢 BBQ COMBO</small>
+
+                <h3>BBQ Lovers Deal</h3>
+
+                <p>
+                    Seekh Kabab, Chicken Tikka,
+                    2 Naan and fresh Salad.
+                </p>
+
+                <div class="deal-price">
+                    <strong>Rs. 1,499</strong>
+                    <del>Rs. 1,750</del>
+                </div>
+
+                <button onclick="alert('BBQ Lovers Deal selected!')">
+                    🛒 Order Deal
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- BIRYANI DEAL -->
+        <div class="deal-card">
+
+            <div class="deal-image">
+                <img
+                    src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1000&q=85"
+                    alt="Biryani Deal">
+                <span class="deal-badge">HOT DEAL</span>
+            </div>
+
+            <div class="deal-content">
+                <small>🍛 RICE COMBO</small>
+
+                <h3>Biryani Family Deal</h3>
+
+                <p>
+                    Chicken Biryani, Raita, Salad
+                    and 4 cold drinks.
+                </p>
+
+                <div class="deal-price">
+                    <strong>Rs. 1,799</strong>
+                    <del>Rs. 2,100</del>
+                </div>
+
+                <button onclick="alert('Biryani Family Deal selected!')">
+                    🛒 Order Deal
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- BURGER DEAL -->
+        <div class="deal-card">
+
+            <div class="deal-image">
+                <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=85"
+                    alt="Burger Deal">
+                <span class="deal-badge">FAST FOOD</span>
+            </div>
+
+            <div class="deal-content">
+                <small>🍔 BURGER COMBO</small>
+
+                <h3>Burger & Drink Deal</h3>
+
+                <p>
+                    Special Chicken Burger,
+                    fries and one cold drink.
+                </p>
+
+                <div class="deal-price">
+                    <strong>Rs. 599</strong>
+                    <del>Rs. 700</del>
+                </div>
+
+                <button onclick="alert('Burger & Drink Deal selected!')">
+                    🛒 Order Deal
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- COUPLE DEAL -->
+        <div class="deal-card">
+
+            <div class="deal-image">
+                <img
+                    src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=85"
+                    alt="Pizza Deal">
+                <span class="deal-badge">SPECIAL</span>
+            </div>
+
+            <div class="deal-content">
+                <small>❤️ COUPLE COMBO</small>
+
+                <h3>Pizza & Drinks Deal</h3>
+
+                <p>
+                    Medium Special Pizza with
+                    2 chilled cold drinks.
+                </p>
+
+                <div class="deal-price">
+                    <strong>Rs. 1,199</strong>
+                    <del>Rs. 1,400</del>
+                </div>
+
+                <button onclick="alert('Pizza & Drinks Deal selected!')">
+                    🛒 Order Deal
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- HANDI DEAL -->
+        <div class="deal-card">
+
+            <div class="deal-image">
+                <img
+                    src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1000&q=85"
+                    alt="Handi Deal">
+                <span class="deal-badge">SPECIAL</span>
+            </div>
+
+            <div class="deal-content">
+                <small>🍲 HANDI COMBO</small>
+
+                <h3>Chicken Handi Deal</h3>
+
+                <p>
+                    Chicken Handi, 4 Naan,
+                    Salad and Raita.
+                </p>
+
+                <div class="deal-price">
+                    <strong>Rs. 1,599</strong>
+                    <del>Rs. 1,850</del>
+                </div>
+
+                <button onclick="alert('Chicken Handi Deal selected!')">
+                    🛒 Order Deal
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* ==========================================
+   STEP 5 — DEALS DESIGN
+========================================== */
+
+.deals-section {
+    background: #0d0d0d;
+    color: white;
+    padding: 90px 6%;
+}
+
+.deals-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.deals-title span {
+    color: #d4a017;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.deals-title h2 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.deals-title h2 b {
+    color: #d4a017;
+}
+
+.deals-title p {
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.deals-container {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.deal-card {
+    background: #181818;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.35s;
+}
+
+.deal-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4a017;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.deal-image {
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+}
+
+.deal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s;
+}
+
+.deal-card:hover .deal-image img {
+    transform: scale(1.07);
+}
+
+.deal-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #d4a017;
+    color: #111;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.deal-content {
+    padding: 24px;
+}
+
+.deal-content small {
+    color: #d4a017;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.deal-content h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.deal-content p {
+    color: #aaa;
+    line-height: 1.6;
+    min-height: 50px;
+}
+
+.deal-price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.deal-price strong {
+    color: #d4a017;
+    font-size: 22px;
+}
+
+.deal-price del {
+    color: #777;
+    font-size: 14px;
+}
+
+.deal-content button {
+    width: 100%;
+    border: none;
+    background: #d4a017;
+    color: #111;
+    padding: 13px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.deal-content button:hover {
+    background: white;
+    transform: scale(1.02);
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .deals-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .deals-section {
+        padding: 60px 18px;
+    }
+
+    .deals-title h2 {
+        font-size: 30px;
+    }
+
+    .deals-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style><!-- =========================
+     STEP 6 — ABOUT SECTION
+========================= -->
+
+<section id="about" class="about-section">
+
+    <div class="about-container">
+
+        <!-- LEFT SIDE -->
+        <div class="about-image">
+            <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
+                alt="Amin Kabab Hotel Restaurant"
+            >
+
+            <div class="experience-box">
+                <strong>100%</strong>
+                <span>Fresh & Quality Food</span>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="about-content">
+
+            <span class="about-small-title">ABOUT AMIN KABAB HOTEL</span>
+
+            <h2>
+                The Taste of <span>Mirpur</span>
+            </h2>
+
+            <p class="about-intro">
+                Welcome to Amin Kabab Hotel — a place where delicious food,
+                traditional flavors and quality come together.
+            </p>
+
+            <p>
+                We serve a variety of tasty dishes including Kabab, Tikka,
+                Karahi, Handi, Biryani, Burgers, Pizza and much more.
+                Every dish is prepared with care to give our customers
+                a memorable dining experience.
+            </p>
+
+            <!-- FEATURES -->
+            <div class="about-features">
+
+                <div class="feature">
+                    <div class="feature-icon">🍖</div>
+                    <div>
+                        <h3>Fresh Food</h3>
+                        <p>Freshly prepared delicious meals.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">⭐</div>
+                    <div>
+                        <h3>Quality Taste</h3>
+                        <p>Rich traditional flavors in every bite.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <div>
+                        <h3>Special Recipes</h3>
+                        <p>Carefully prepared restaurant specialties.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">❤️</div>
+                    <div>
+                        <h3>Made With Care</h3>
+                        <p>Customer satisfaction is our priority.</p>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="topbar-right">
+            <a href="#menu" class="about-btn">
+                🍽️ Explore Our Menu
+            </a>
 
-                <div class="topbar-item">
-                    📞
-                    <a href="tel:03498037743">
-                        03498 037743
-                    </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+    background: #0b0b0b;
+    color: white;
+    padding: 100px 6%;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* IMAGE */
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 25px;
+
+    border: 2px solid #d4a017;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.5);
+}
+
+
+/* EXPERIENCE BOX */
+
+.experience-box {
+    position: absolute;
+    bottom: 25px;
+    right: -20px;
+
+    background: #d4a017;
+    color: #111;
+
+    padding: 22px 30px;
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.experience-box strong {
+    display: block;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.experience-box span {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* CONTENT */
+
+.about-small-title {
+    color: #d4a017;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.about-content h2 {
+    font-size: 48px;
+    margin: 15px 0 20px;
+    line-height: 1.1;
+}
+
+.about-content h2 span {
+    color: #d4a017;
+}
+
+.about-intro {
+    font-size: 20px;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-content > p:not(.about-intro) {
+    color: #aaa;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+
+/* FEATURES */
+
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+
+    margin: 35px 0;
+}
+
+.feature {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    min-width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(212,160,23,0.12);
+    border: 1px solid #d4a017;
+    border-radius: 12px;
+
+    font-size: 23px;
+}
+
+.feature h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+}
+
+.feature p {
+    margin: 0;
+    color: #999;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* BUTTON */
+
+.about-btn {
+    display: inline-block;
+
+    background: #d4a017;
+    color: #111;
+
+    padding: 14px 25px;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    transform: translateY(-3px);
+    background: #f0c43c;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .about-section {
+        padding: 70px 20px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-image img {
+        height: 400px;
+    }
+
+    .experience-box {
+        right: 10px;
+    }
+
+    .about-content h2 {
+        font-size: 38px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        height: 330px;
+    }
+
+    .experience-box {
+        padding: 15px 20px;
+    }
+
+    .experience-box strong {
+        font-size: 27px;
+    }
+
+}
+
+</style><!-- =========================
+     STEP 7 — CUSTOMER REVIEWS
+========================= -->
+
+<section id="reviews" class="reviews-section">
+
+    <div class="reviews-heading">
+        <span>WHAT OUR CUSTOMERS SAY</span>
+        <h2>Customer <strong>Reviews</strong></h2>
+        <p>
+            Our customers' feedback means a lot to us.
+            Here are some sample reviews for Amin Kabab Hotel.
+        </p>
+    </div>
+
+    <div class="reviews-container">
+
+        <!-- REVIEW 1 -->
+        <div class="review-card">
+
+            <div class="quote">“</div>
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                The kabab and tikka were absolutely delicious.
+                Fresh food, great taste and excellent presentation.
+            </p>
+
+            <div class="customer">
+                <div class="customer-avatar">A</div>
+                <div>
+                    <h3>Ahmed</h3>
+                    <span>Mirpur AJK</span>
                 </div>
+            </div>
+
+        </div>
+
+
+        <!-- REVIEW 2 -->
+        <div class="review-card">
+
+            <div class="quote">“</div>
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                Chicken karahi was amazing and the quantity was
+                very good. Definitely a place I would visit again.
+            </p>
+
+            <div class="customer">
+                <div class="customer-avatar">M</div>
+                <div>
+                    <h3>Mohammad</h3>
+                    <span>Mirpur AJK</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- REVIEW 3 -->
+        <div class="review-card">
+
+            <div class="quote">“</div>
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                Loved the food and the overall experience.
+                The biryani was full of flavor and very tasty.
+            </p>
+
+            <div class="customer">
+                <div class="customer-avatar">S</div>
+                <div>
+                    <h3>Saad</h3>
+                    <span>Mirpur AJK</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* =========================
+   REVIEWS SECTION
+========================= */
+
+.reviews-section {
+    background: #111;
+    color: white;
+    padding: 100px 6%;
+}
+
+.reviews-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.reviews-heading span {
+    color: #d4a017;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.reviews-heading h2 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.reviews-heading h2 strong {
+    color: #d4a017;
+}
+
+.reviews-heading p {
+    color: #999;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+
+/* REVIEW CARDS */
+
+.reviews-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.review-card {
+    position: relative;
+
+    background: #181818;
+    border: 1px solid #292929;
+
+    border-radius: 20px;
+    padding: 35px;
+
+    transition: 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4a017;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+
+/* QUOTE */
+
+.quote {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+
+    font-size: 65px;
+    color: #d4a017;
+    opacity: 0.25;
+}
+
+
+/* STARS */
+
+.stars {
+    color: #d4a017;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+
+/* REVIEW TEXT */
+
+.review-card > p {
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 15px;
+
+    min-height: 110px;
+}
+
+
+/* CUSTOMER */
+
+.customer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 25px;
+    padding-top: 20px;
+
+    border-top: 1px solid #292929;
+}
+
+.customer-avatar {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #d4a017;
+    color: #111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.customer h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+}
+
+.customer span {
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .reviews-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .reviews-section {
+        padding: 70px 20px;
+    }
+
+    .reviews-heading h2 {
+        font-size: 36px;
+    }
+
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+</style><!-- =========================
+     STEP 8 — CONTACT + WHATSAPP
+========================= -->
+
+<section id="contact" class="contact-section">
+
+    <div class="contact-heading">
+        <span>GET IN TOUCH</span>
+        <h2>Contact <strong>Us</strong></h2>
+        <p>
+            Have a question or want to place an order?
+            Contact Amin Kabab Hotel directly.
+        </p>
+    </div>
+
+    <div class="contact-container">
+
+        <!-- LEFT SIDE -->
+        <div class="contact-info">
+
+            <div class="contact-card">
+
+                <div class="contact-icon">📍</div>
+
+                <div>
+                    <h3>Our Location</h3>
+                    <p>Purani Hattiya, Mirpur, Azad Kashmir</p>
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">📞</div>
+
+                <div>
+                    <h3>Phone / WhatsApp</h3>
+                    <p>0349 8037743</p>
+                </div>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-icon">🕐</div>
+
+                <div>
+                    <h3>Opening Hours</h3>
+                    <p>Daily • 11:00 AM – 11:00 PM</p>
+                </div>
+
+            </div>
+
+
+            <!-- WHATSAPP BOX -->
+
+            <div class="whatsapp-box">
+
+                <div class="whatsapp-logo">💬</div>
+
+                <div>
+                    <h3>Order on WhatsApp</h3>
+                    <p>
+                        Send us your order directly on WhatsApp.
+                    </p>
+                </div>
+
+                <a
+                    href="https://wa.me/923498037743?text=Assalam-o-Alaikum%20Amin%20Kabab%20Hotel%2C%20I%20want%20to%20place%20an%20order."
+                    target="_blank"
+                    class="whatsapp-btn"
+                >
+                    📲 WhatsApp Order
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="contact-form-box">
+
+            <h3>Send Us a Message</h3>
+
+            <form onsubmit="sendWhatsAppMessage(event)">
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="Your Phone Number"
+                    required
+                >
+
+                <textarea
+                    id="customerMessage"
+                    rows="6"
+                    placeholder="Write your message or order..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    📲 Send on WhatsApp
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function sendWhatsAppMessage(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("customerPhone").value;
+    const message = document.getElementById("customerMessage").value;
+
+    const text =
+        "Assalam-o-Alaikum Amin Kabab Hotel,%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Message/Order: " + encodeURIComponent(message);
+
+    window.open(
+        "https://wa.me/923498037743?text=" + text,
+        "_blank"
+    );
+}
+
+</script>
+
+
+<style>
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+    background: #0b0b0b;
+    color: white;
+    padding: 100px 6%;
+}
+
+.contact-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.contact-heading span {
+    color: #d4a017;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.contact-heading h2 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.contact-heading h2 strong {
+    color: #d4a017;
+}
+
+.contact-heading p {
+    color: #999;
+    line-height: 1.7;
+}
+
+
+/* CONTAINER */
+
+.contact-container {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+
+/* CONTACT CARDS */
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    background: #171717;
+    border: 1px solid #292929;
+
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(212,160,23,0.12);
+    border: 1px solid #d4a017;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.contact-card h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+}
+
+.contact-card p {
+    margin: 0;
+    color: #999;
+    font-size: 14px;
+}
+
+
+/* WHATSAPP */
+
+.whatsapp-box {
+    background: #151515;
+    border: 1px solid #333;
+
+    padding: 25px;
+    border-radius: 18px;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+
+    align-items: center;
+}
+
+.whatsapp-logo {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+}
+
+.whatsapp-box h3 {
+    margin: 0 0 5px;
+}
+
+.whatsapp-box p {
+    margin: 0;
+    color: #999;
+    font-size: 13px;
+}
+
+.whatsapp-btn {
+    grid-column: 1 / -1;
+
+    display: block;
+    text-align: center;
+
+    background: #25D366;
+    color: white;
+
+    padding: 14px;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* FORM */
+
+.contact-form-box {
+    background: #171717;
+    border: 1px solid #292929;
+
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.contact-form-box h3 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.contact-form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form-box input,
+.contact-form-box textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    background: #0d0d0d;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.contact-form-box input:focus,
+.contact-form-box textarea:focus {
+    border-color: #d4a017;
+}
+
+.contact-form-box textarea {
+    resize: vertical;
+}
+
+.contact-form-box button {
+    border: none;
+
+    background: #d4a017;
+    color: #111;
+
+    padding: 15px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.contact-form-box button:hover {
+    background: #f0c43c;
+    transform: translateY(-3px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .contact-section {
+        padding: 70px 20px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-heading h2 {
+        font-size: 38px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .contact-form-box {
+        padding: 25px 20px;
+    }
+
+    .whatsapp-box {
+        padding: 20px;
+    }
+
+}
+
+</style><!-- =========================
+     STEP 9 — PREMIUM FOOTER
+========================= -->
+
+<footer class="premium-footer">
+
+    <div class="footer-container">
+
+        <!-- BRAND -->
+        <div class="footer-column footer-brand">
+
+            <div class="footer-logo">
+                <div class="footer-logo-circle">AK</div>
+
+                <div>
+                    <h2>Amin Kabab Hotel</h2>
+                    <span>Authentic Taste • Mirpur AJK</span>
+                </div>
+            </div>
+
+            <p>
+                Delicious traditional food, rich flavors and
+                quality service — all in one place.
+            </p>
+
+            <a
+                href="https://wa.me/923498037743?text=Assalam-o-Alaikum%20Amin%20Kabab%20Hotel"
+                target="_blank"
+                class="footer-whatsapp"
+            >
+                💬 WhatsApp Us
+            </a>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="#menu">Our Menu</a>
+            <a href="#drinks">Drinks</a>
+            <a href="#deals">Special Deals</a>
+            <a href="#about">About Us</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <!-- CONTACT -->
+        <div class="footer-column">
+
+            <h3>Contact Us</h3>
+
+            <p>📍 Purani Hattiya, Mirpur, Azad Kashmir</p>
+            <p>📞 0349 8037743</p>
+            <p>🕐 Daily: 11 AM – 11 PM</p>
+
+            <a
+                href="https://wa.me/923498037743"
+                target="_blank"
+                class="footer-order"
+            >
+                🛒 Order Now
+            </a>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+        <div class="footer-column">
+
+            <h3>Follow Us</h3>
+
+            <p>
+                Follow Amin Kabab Hotel for
+                updates, deals and delicious food.
+            </p>
+
+            <div class="social-buttons">
+
+                <a href="#" class="social facebook">
+                    f
+                </a>
+
+                <a href="#" class="social instagram">
+                    ◎
+                </a>
+
+                <a href="#" class="social tiktok">
+                    ♪
+                </a>
+
+                <a
+                    href="https://wa.me/923498037743"
+                    target="_blank"
+                    class="social whatsapp"
+                >
+                    ☎
+                </a>
 
             </div>
 
@@ -1202,1248 +2721,306 @@
     </div>
 
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================= -->
+    <!-- BOTTOM FOOTER -->
 
-    <header class="navbar">
+    <div class="footer-bottom">
 
-        <div class="container nav-inner">
+        <p>
+            © 2026 <strong>Amin Kabab Hotel</strong>.
+            All Rights Reserved.
+        </p>
 
-            <a href="#home" class="brand">
+        <p class="developer">
+            Website Developed by
+            <strong>Mohammed Ammar Umer</strong>
+        </p>
 
-                <div class="brand-mark">
-                    🍽
-                </div>
+    </div>
 
-                <div>
-                    <div class="brand-name">
-                        Amin Kabab House
-                    </div>
+</footer>
 
-                    <span class="brand-sub">
-                        Authentic Taste
-                    </span>
-                </div>
 
-            </a>
+<style>
 
+/* =========================
+   PREMIUM FOOTER
+========================= */
 
-            <nav class="nav-links">
+.premium-footer {
+    background: #080808;
+    color: white;
+    border-top: 1px solid #252525;
+    padding-top: 70px;
+}
 
-                <a href="#home">
-                    Home
-                </a>
 
-                <a href="#about">
-                    About
-                </a>
+/* CONTAINER */
 
-                <a href="#menu">
-                    Menu
-                </a>
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
 
-                <a href="#experience">
-                    Experience
-                </a>
+    padding: 0 6% 60px;
 
-                <a href="#contact">
-                    Contact
-                </a>
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
 
-                <a
-                    href="tel:03498037743"
-                    class="nav-order"
-                >
-                    Call to Order
-                </a>
+    gap: 45px;
+}
 
-            </nav>
 
-        </div>
+/* BRAND */
 
-    </header>
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
+    margin-bottom: 20px;
+}
 
-    <!-- =========================================================
-         HERO
-    ========================================================= -->
+.footer-logo-circle {
+    width: 55px;
+    height: 55px;
 
-    <main id="home">
+    border-radius: 50%;
 
-        <section class="hero">
+    background: #d4a017;
+    color: #111;
 
-            <div class="container">
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                <div class="hero-content">
+    font-size: 20px;
+    font-weight: bold;
 
-                    <div class="eyebrow">
-                        Welcome to Amin Kabab House
-                    </div>
+    border: 2px solid white;
+}
 
-                    <h1>
-                        The Taste<br>
-                        <span>That Brings You Back.</span>
-                    </h1>
+.footer-brand h2 {
+    margin: 0;
+    font-size: 20px;
+}
 
-                    <p class="hero-text">
-                        Experience authentic Pakistani flavours,
-                        sizzling BBQ, juicy kababs and traditional
-                        desi favourites — freshly prepared and
-                        served with pride.
-                    </p>
+.footer-brand span {
+    color: #d4a017;
+    font-size: 11px;
+}
 
+.footer-brand > p {
+    color: #999;
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
 
-                    <div class="hero-buttons">
 
-                        <a
-                            href="#menu"
-                            class="btn btn-primary"
-                        >
-                            Explore Our Menu
-                        </a>
+/* HEADINGS */
 
-                        <a
-                            href="tel:03498037743"
-                            class="btn btn-dark"
-                        >
-                            📞 03498 037743
-                        </a>
+.footer-column h3 {
+    color: #d4a017;
 
-                    </div>
+    font-size: 17px;
 
+    margin: 0 0 20px;
+}
 
-                    <div class="hero-note">
 
-                        <span class="hero-note-dot"></span>
+/* LINKS */
 
-                        Fresh food • Traditional taste • Quality first
+.footer-column > a:not(.footer-whatsapp):not(.footer-order) {
+    display: block;
 
-                    </div>
+    color: #aaa;
 
-                </div>
+    text-decoration: none;
 
-            </div>
+    font-size: 14px;
 
-        </section>
+    margin-bottom: 12px;
 
+    transition: 0.3s;
+}
 
-        <!-- =====================================================
-             TRUST FEATURES
-        ===================================================== -->
+.footer-column > a:not(.footer-whatsapp):not(.footer-order):hover {
+    color: #d4a017;
+    padding-left: 5px;
+}
 
-        <div class="trust-strip">
 
-            <div class="container">
+/* CONTACT TEXT */
 
-                <div class="trust-grid">
+.footer-column > p {
+    color: #999;
 
-                    <div class="trust-card">
+    font-size: 14px;
 
-                        <div class="trust-icon">
-                            🔥
-                        </div>
+    line-height: 1.7;
 
-                        <strong>
-                            Fresh BBQ
-                        </strong>
+    margin: 0 0 12px;
+}
 
-                        <span>
-                            Grilled for great flavour
-                        </span>
 
-                    </div>
+/* WHATSAPP */
 
+.footer-whatsapp {
+    display: inline-block;
 
-                    <div class="trust-card">
+    background: #25D366;
+    color: white;
 
-                        <div class="trust-icon">
-                            🥩
-                        </div>
+    padding: 12px 20px;
 
-                        <strong>
-                            Quality Ingredients
-                        </strong>
+    border-radius: 25px;
 
-                        <span>
-                            Selected with care
-                        </span>
+    text-decoration: none;
 
-                    </div>
+    font-weight: bold;
+    font-size: 14px;
 
+    transition: 0.3s;
+}
 
-                    <div class="trust-card">
+.footer-whatsapp:hover {
+    transform: translateY(-3px);
+}
 
-                        <div class="trust-icon">
-                            👨‍🍳
-                        </div>
 
-                        <strong>
-                            Desi Expertise
-                        </strong>
+/* ORDER BUTTON */
 
-                        <span>
-                            Traditional recipes
-                        </span>
+.footer-order {
+    display: inline-block;
 
-                    </div>
+    margin-top: 10px;
 
+    background: #d4a017;
+    color: #111;
 
-                    <div class="trust-card">
+    padding: 11px 20px;
 
-                        <div class="trust-icon">
-                            ⭐
-                        </div>
+    border-radius: 25px;
 
-                        <strong>
-                            Made With Care
-                        </strong>
+    text-decoration: none;
 
-                        <span>
-                            Taste in every bite
-                        </span>
+    font-weight: bold;
+    font-size: 14px;
 
-                    </div>
+    transition: 0.3s;
+}
 
-                </div>
+.footer-order:hover {
+    background: #f0c43c;
+    transform: translateY(-3px);
+}
 
-            </div>
 
-        </div>
+/* SOCIAL BUTTONS */
 
+.social-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
 
-        <!-- =====================================================
-             ABOUT
-        ===================================================== -->
+.social {
+    width: 42px;
+    height: 42px;
 
-        <section class="section about-section" id="about">
+    border-radius: 50%;
 
-            <div class="container">
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-                <div class="about-grid">
+    color: white;
 
-                    <div class="about-photo">
+    text-decoration: none;
 
-                        <div class="about-badge">
+    font-size: 20px;
+    font-weight: bold;
 
-                            <strong>
-                                100%
-                            </strong>
+    border: 1px solid #444;
 
-                            <span>
-                                Made with passion
-                            </span>
+    transition: 0.3s;
+}
 
-                        </div>
+.social:hover {
+    transform: translateY(-4px);
+    border-color: #d4a017;
+    color: #d4a017;
+}
 
-                    </div>
 
+/* BOTTOM */
 
-                    <div class="about-content">
+.footer-bottom {
+    border-top: 1px solid #242424;
 
-                        <span class="section-kicker">
-                            Our Story
-                        </span>
+    max-width: 1200px;
 
-                        <h2>
-                            Simple Ingredients.
-                            <span>Exceptional Taste.</span>
-                        </h2>
+    margin: auto;
 
-                        <p>
-                            At Amin Kabab House, food is prepared
-                            with one simple goal — to give our
-                            customers a memorable taste they want
-                            to enjoy again.
-                        </p>
+    padding: 22px 6%;
 
-                        <p>
-                            From smoky BBQ and tender kababs to
-                            traditional desi dishes and refreshing
-                            drinks, our menu brings together the
-                            flavours people love.
-                        </p>
+    display: flex;
 
+    justify-content: space-between;
 
-                        <ul class="check-list">
+    align-items: center;
 
-                            <li>
-                                Freshly prepared food
-                            </li>
+    gap: 15px;
 
-                            <li>
-                                Authentic desi flavours
-                            </li>
+    flex-wrap: wrap;
+}
 
-                            <li>
-                                Delicious BBQ selection
-                            </li>
+.footer-bottom p {
+    margin: 0;
 
-                            <li>
-                                Quality-focused preparation
-                            </li>
+    color: #777;
 
-                            <li>
-                                Variety for every craving
-                            </li>
+    font-size: 13px;
+}
 
-                            <li>
-                                Friendly dining experience
-                            </li>
+.footer-bottom strong {
+    color: #d4a017;
+}
 
-                        </ul>
+.developer {
+    text-align: right;
+}
 
 
-                        <a
-                            href="#menu"
-                            class="btn btn-primary"
-                        >
-                            Discover Our Menu
-                        </a>
+/* MOBILE */
 
-                    </div>
+@media (max-width: 950px) {
 
-                </div>
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
 
-            </div>
+}
 
-        </section>
+@media (max-width: 600px) {
 
+    .premium-footer {
+        padding-top: 55px;
+    }
 
-        <!-- =====================================================
-             MENU
-        ===================================================== -->
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
 
-        <section class="section menu-section" id="menu">
+    .footer-bottom {
+        text-align: center;
+        justify-content: center;
+    }
 
-            <div class="container">
+    .developer {
+        text-align: center;
+    }
 
-                <div class="section-head">
+}
 
-                    <span class="section-kicker">
-                        Our Menu
-                    </span>
-
-                    <h2>
-                        Made for Every Craving
-                    </h2>
-
-                    <p>
-                        Explore our selection of BBQ,
-                        kababs, desi favourites, rice,
-                        fast food and refreshing drinks.
-                    </p>
-
-                </div>
-
-
-                <!-- MENU FILTER -->
-
-                <div class="menu-filter">
-
-                    <button
-                        class="filter-btn active"
-                        data-filter="all"
-                    >
-                        All
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="bbq"
-                    >
-                        BBQ
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="kabab"
-                    >
-                        Kababs
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="desi"
-                    >
-                        Desi
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="rice"
-                    >
-                        Rice
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="fast"
-                    >
-                        Fast Food
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="drinks"
-                    >
-                        Drinks
-                    </button>
-
-                </div>
-
-
-                <div class="menu-grid">
-
-
-                    <!-- 01 MALAI BOTI -->
-
-                    <article
-                        class="menu-card"
-                        data-category="bbq"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=900&q=90"
-                                alt="Malai Boti"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Signature
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Malai Boti
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Tender chicken pieces with
-                                a creamy, rich marinade.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 02 CHICKEN TIKKA -->
-
-                    <article
-                        class="menu-card"
-                        data-category="bbq"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=90"
-                                alt="Chicken Tikka"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                BBQ
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Chicken Tikka
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Smoky grilled chicken with
-                                traditional spices.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 03 SEEKH KABAB -->
-
-                    <article
-                        class="menu-card"
-                        data-category="kabab"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=90"
-                                alt="Seekh Kabab"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Favourite
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Seekh Kabab
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Juicy minced-meat kababs
-                                grilled with aromatic spices.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 04 CHICKEN KABAB -->
-
-                    <article
-                        class="menu-card"
-                        data-category="kabab"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=900&q=90"
-                                alt="Chicken Kabab"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Popular
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Chicken Kabab
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Tender chicken kababs
-                                seasoned with desi spices.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 05 BEEF KABAB -->
-
-                    <article
-                        class="menu-card"
-                        data-category="kabab"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=90"
-                                alt="Beef Kabab"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Classic
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Beef Kabab
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Classic beef kabab grilled
-                                to a delicious finish.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 06 CHICKEN KARAHI -->
-
-                    <article
-                        class="menu-card"
-                        data-category="desi"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1593560708920-61dd98c8c0a1?auto=format&fit=crop&w=900&q=90"
-                                alt="Chicken Karahi"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Desi
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Chicken Karahi
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Traditional karahi with
-                                tomatoes, chillies and spices.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 07 MUTTON KARAHI -->
-
-                    <article
-                        class="menu-card"
-                        data-category="desi"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=90"
-                                alt="Mutton Karahi"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Special
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Mutton Karahi
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Rich and aromatic mutton
-                                cooked in traditional style.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 08 CHICKEN HANDI -->
-
-                    <article
-                        class="menu-card"
-                        data-category="desi"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=90"
-                                alt="Chicken Handi"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Creamy
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Chicken Handi
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Creamy chicken handi with
-                                rich traditional flavours.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 09 CHICKEN BIRYANI -->
-
-                    <article
-                        class="menu-card"
-                        data-category="rice"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=90"
-                                alt="Chicken Biryani"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Rice
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Chicken Biryani
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Aromatic basmati rice with
-                                tender chicken and spices.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 10 PULAO -->
-
-                    <article
-                        class="menu-card"
-                        data-category="rice"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=90"
-                                alt="Pulao"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Rice
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Special Pulao
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Fragrant rice cooked with
-                                aromatic traditional spices.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 11 BBQ PLATTER -->
-
-                    <article
-                        class="menu-card"
-                        data-category="bbq"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=90"
-                                alt="BBQ Platter"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Chef's Pick
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Special BBQ Platter
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                A generous combination of
-                                delicious BBQ favourites.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 12 CHICKEN CHEESE BURGER -->
-
-                    <article
-                        class="menu-card"
-                        data-category="fast"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=90"
-                                alt="Chicken Burger"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Fast Food
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Chicken Burger
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Juicy chicken fillet with
-                                fresh toppings and sauce.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 13 CHICKEN PIZZA -->
-
-                    <article
-                        class="menu-card"
-                        data-category="fast"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=90"
-                                alt="Chicken Pizza"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Fast Food
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Chicken Pizza
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Cheesy pizza topped with
-                                seasoned chicken and herbs.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 14 FRENCH FRIES -->
-
-                    <article
-                        class="menu-card"
-                        data-category="fast"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=90"
-                                alt="French Fries"
-                                loading="lazy"
-                            >
-
-                            <span class="menu-tag">
-                                Side
-                            </span>
-
-                        </div>
-
-                        <div class="menu-info">
-
-                            <div class="menu-title-row">
-
-                                <h3>
-                                    Crispy Fries
-                                </h3>
-
-                                <span class="menu-price">
-                                    Rs. —
-                                </span>
-
-                            </div>
-
-                            <p>
-                                Golden crispy fries,
-                                perfect with any meal.
-                            </p>
-
-                            <div class="menu-bottom">
-
-                                <span class="stars">
-                                    ★★★★★
-                                </span>
-
-                                <a
-                                    href="tel:03498037743"
-                                    class="menu-order"
-                                >
-                                    ORDER →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- 15 COLD DRINK -->
-
-                    <article
-                        class="menu-card"
-                        data-category="drinks"
-                    >
-
-                        <div class="menu-image">
-
-                            <img
-         
+</style>
