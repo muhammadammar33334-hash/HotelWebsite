@@ -1,18 +1,16 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Amin Kabab House Mirpur AJK</title>
+    <title>Amin Kabab House | Mirpur Azad Kashmir</title>
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -20,120 +18,644 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f5f0;
             color: #222;
+            line-height: 1.6;
         }
 
+        /* ================= HEADER ================= */
+
         header {
-            background: #111;
+            background: linear-gradient(135deg, #111111, #292929);
             color: white;
-            padding: 18px 20px;
             text-align: center;
+            padding: 28px 15px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.28);
         }
 
         header h1 {
-            font-size: 28px;
-            margin-bottom: 12px;
+            font-size: 30px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
         }
 
-        nav a {
+        header p {
+            color: #e4bd55;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        nav a,
+        .cart-button {
             color: white;
+            background: transparent;
             text-decoration: none;
-            margin: 0 12px;
+            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        .cart-button:hover {
+            background: #d6a83f;
+            color: #111;
+            border-color: #d6a83f;
+        }
+
+        .cart-button {
+            position: relative;
+        }
+
+        #cartCount {
+            position: absolute;
+            top: -8px;
+            right: -7px;
+            background: #e53935;
+            color: white;
+            width: 21px;
+            height: 21px;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-weight: bold;
         }
 
-        nav a:hover {
-            color: #f0b400;
-        }
+        /* ================= HERO ================= */
 
         .hero {
+            min-height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 70px 20px;
-            background: white;
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
+                url("https://i.ibb.co/dsFb1j0X/mutton-seekh-kabab.jpg")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            color: white;
         }
 
         .hero h2 {
-            font-size: 38px;
-            margin-bottom: 15px;
+            font-size: 50px;
+            line-height: 1.15;
+            margin-bottom: 16px;
         }
 
         .hero p {
             font-size: 18px;
-            color: #666;
+            color: #f2f2f2;
+            margin-bottom: 28px;
         }
 
-        .menu {
-            padding: 50px 20px;
-            max-width: 1200px;
+        .hero-btn {
+            display: inline-block;
+            background: #d6a83f;
+            color: #111;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #f0ca68;
+            transform: translateY(-3px);
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            max-width: 1150px;
+            margin: -35px auto 0;
+            position: relative;
+            z-index: 5;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .feature {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .feature h3 {
+            font-size: 15px;
+        }
+
+        .feature p {
+            color: #777;
+            font-size: 12px;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 65px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            margin-bottom: 7px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .menu-tools {
+            max-width: 1100px;
+            margin: 0 auto 35px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 18px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 15px;
+            outline: none;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .search-box:focus {
+            border-color: #d6a83f;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .category-btn {
+            border: 1px solid #ddd;
+            background: white;
+            padding: 9px 17px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #d6a83f;
+            border-color: #d6a83f;
+        }
+
+        /* ================= MENU ================= */
+
+        .menu-section {
+            max-width: 1250px;
             margin: auto;
         }
 
-        .menu h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 35px;
+        .category-title {
+            font-size: 25px;
+            margin: 40px 0 20px;
+            border-left: 5px solid #d6a83f;
+            padding-left: 12px;
         }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
             gap: 25px;
         }
 
-        .dish {
+        .food-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
-            transition: transform 0.2s;
+            border: 1px solid #eee;
+            box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
         }
 
-        .dish:hover {
-            transform: translateY(-5px);
+        .food-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 32px rgba(0,0,0,0.15);
         }
 
-        .dish img {
+        .food-card img {
             width: 100%;
             height: 220px;
             object-fit: cover;
             display: block;
         }
 
-        .dish h3 {
-            padding: 18px;
-            text-align: center;
-            font-size: 20px;
+        .food-info {
+            padding: 17px;
         }
 
-        footer {
-            background: #111;
+        .food-info h3 {
+            font-size: 19px;
+            margin-bottom: 9px;
+        }
+
+        .price {
+            display: inline-block;
+            color: #946b10;
+            background: #fff7df;
+            border: 1px solid #ead18b;
+            padding: 6px 11px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .add-btn {
+            width: 100%;
+            margin-top: 14px;
+            padding: 11px;
+            border: none;
+            border-radius: 9px;
+            background: #222;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-btn:hover {
+            background: #d6a83f;
+            color: #111;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #202020;
             color: white;
             text-align: center;
-            padding: 25px 15px;
-            margin-top: 30px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 23px;
-            }
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+        }
 
-            nav a {
-                margin: 0 6px;
-                font-size: 14px;
+        .about h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            color: #ddd;
+        }
+
+        /* ================= LOCATION ================= */
+
+        .location {
+            background: #f1eee7;
+            text-align: center;
+        }
+
+        .location-box {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .location-box h2 {
+            margin-bottom: 12px;
+        }
+
+        .location-box p {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        /* ================= CART ================= */
+
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 2000;
+            display: none;
+        }
+
+        .cart-overlay.show {
+            display: block;
+        }
+
+        .cart-panel {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 430px;
+            max-width: 100%;
+            height: 100vh;
+            background: white;
+            z-index: 2001;
+            padding: 22px;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: 0.35s;
+        }
+
+        .cart-overlay.show .cart-panel {
+            transform: translateX(0);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-header h2 {
+            font-size: 23px;
+        }
+
+        .close-cart {
+            border: none;
+            background: #eee;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #cartItems {
+            padding: 15px 0;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #eee;
+            padding: 14px 0;
+        }
+
+        .cart-item-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .cart-item h4 {
+            font-size: 15px;
+        }
+
+        .cart-item-price {
+            font-weight: bold;
+        }
+
+        .quantity-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 9px;
+        }
+
+        .quantity-row button {
+            width: 29px;
+            height: 29px;
+            border: none;
+            border-radius: 6px;
+            background: #eee;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .remove-btn {
+            margin-left: auto;
+            border: none !important;
+            background: transparent !important;
+            color: #d33;
+            cursor: pointer;
+        }
+
+        .cart-total {
+            border-top: 2px solid #222;
+            padding-top: 15px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* ================= ORDER FORM ================= */
+
+        .order-form {
+            margin-top: 20px;
+        }
+
+        .order-form h3 {
+            margin-bottom: 12px;
+        }
+
+        .order-form input,
+        .order-form textarea,
+        .order-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .order-form textarea {
+            min-height: 75px;
+            resize: vertical;
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: #25D366;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #777;
+            padding: 35px 10px;
+        }
+
+        /* ================= DEVELOPER ================= */
+
+        .developer {
+            background: #111;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            border-top: 1px solid #333;
+        }
+
+        .developer-small {
+            color: #999;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .developer-name {
+            font-size: 25px;
+            font-weight: bold;
+            color: #e4bd55;
+            letter-spacing: 0.5px;
+        }
+
+        .developer-line {
+            width: 55px;
+            height: 3px;
+            background: #d6a83f;
+            margin: 12px auto 0;
+            border-radius: 10px;
+        }
+
+        /* ================= TOAST ================= */
+
+        .toast {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #222;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            z-index: 3000;
+            opacity: 0;
+            transition: 0.35s;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #080808;
+            color: #999;
+            text-align: center;
+            padding: 22px 15px;
+        }
+
+        footer strong {
+            color: #d6a83f;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .hero h2 {
-                font-size: 30px;
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 24px;
             }
 
-            .dish img {
-                height: 200px;
+            .hero {
+                min-height: 370px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 50px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .food-card img {
+                height: 230px;
+            }
+
+            .features {
+                padding: 0 12px;
+                gap: 10px;
+            }
+
+            .feature {
+                padding: 15px 7px;
             }
         }
     </style>
@@ -141,99 +663,163 @@
 
 <body>
 
-    <header>
-        <h1>Amin Kabab House Mirpur AJK</h1>
+    <!-- ================= HEADER ================= -->
+
+    <header id="home">
+
+        <h1>Amin Kabab House</h1>
+
+        <p>Mirpur Azad Kashmir • Purani Hatti</p>
 
         <nav>
+
             <a href="#home">Home</a>
+
             <a href="#menu">Menu</a>
+
+            <a href="#about">About</a>
+
+            <button class="cart-button" onclick="openCart()">
+                🛒 Cart
+                <span id="cartCount">0</span>
+            </button>
+
         </nav>
+
     </header>
 
 
-    <section class="hero" id="home">
-        <h2>Welcome to Amin Kabab House</h2>
-        <p>Delicious food in Mirpur AJK</p>
-    </section>
+    <!-- ================= HERO ================= -->
 
+    <section class="hero">
 
-    <section class="menu" id="menu">
+        <div class="hero-content">
 
-        <h2>Our Menu</h2>
+            <h2>Welcome to Amin Kabab House</h2>
 
-        <div class="menu-grid">
+            <p>
+                Authentic Pakistani taste,
+                fresh BBQ, Karahi, Handi and delicious sides.
+            </p>
 
-            <!-- Mutton Kabab Handi -->
-            <div class="dish">
-                <img src="{% static 'booking/images/mutton_kabab_handi.jpg' %}"
-                     alt="Mutton Kabab Handi">
-                <h3>Mutton Kabab Handi</h3>
-            </div>
-
-
-            <!-- Mutton Seekh Kabab -->
-            <div class="dish">
-                <img src="{% static 'booking/images/mutton_seekh_kabab.jpg' %}"
-                     alt="Mutton Seekh Kabab">
-                <h3>Mutton Seekh Kabab</h3>
-            </div>
-
-
-            <!-- Mutton Kaleji Handi -->
-            <div class="dish">
-                <img src="{% static 'booking/images/mutton_kaleji_handi.jpg' %}"
-                     alt="Mutton Kaleji Handi">
-                <h3>Mutton Kaleji Handi</h3>
-            </div>
-
-
-            <!-- Mutton Seekh Tikka -->
-            <div class="dish">
-                <img src="{% static 'booking/images/mutton_seekh_tikka.jpg' %}"
-                     alt="Mutton Seekh Tikka">
-                <h3>Mutton Seekh Tikka</h3>
-            </div>
-
-
-            <!-- French Fries Per Plate -->
-            <div class="dish">
-                <img src="{% static 'booking/images/french_fries_per_plate.jpg' %}"
-                     alt="French Fries Per Plate">
-                <h3>French Fries Per Plate</h3>
-            </div>
-
-
-            <!-- Chatni Per Bowl -->
-            <div class="dish">
-                <img src="{% static 'booking/images/chatni_per_bowl.jpg' %}"
-                     alt="Chatni Per Bowl">
-                <h3>Chatni Per Bowl</h3>
-            </div>
-
-
-            <!-- Salad Per Plate -->
-            <div class="dish">
-                <img src="{% static 'booking/images/salad_per_plate.jpg' %}"
-                     alt="Salad Per Plate">
-                <h3>Salad Per Plate</h3>
-            </div>
-
-
-            <!-- Roti -->
-            <div class="dish">
-                <img src="{% static 'booking/images/roti.jpg' %}"
-                     alt="Roti">
-                <h3>Roti</h3>
-            </div>
+            <a href="#menu" class="hero-btn">
+                View Our Menu
+            </a>
 
         </div>
 
     </section>
 
 
-    <footer>
-        <p>© 2026 Amin Kabab House Mirpur AJK</p>
-    </footer>
+    <!-- ================= FEATURES ================= -->
 
-</body>
-</html>
+    <div class="features">
+
+        <div class="feature">
+            <div class="feature-icon">🍖</div>
+            <h3>Fresh Food</h3>
+            <p>Freshly prepared dishes</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🔥</div>
+            <h3>Hot & Delicious</h3>
+            <p>Prepared fresh for you</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">⭐</div>
+            <h3>Quality Taste</h3>
+            <p>Traditional Pakistani taste</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>Easy Ordering</h3>
+            <p>Order directly on WhatsApp</p>
+        </div>
+
+    </div>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section id="menu">
+
+        <div class="menu-section">
+
+            <div class="section-title">
+
+                <h2>Our Menu</h2>
+
+                <p>
+                    Select your favourite dishes
+                    and add them to your order.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="menu-tools">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="search-box"
+                    placeholder="🔎 Search your favourite dish..."
+                    oninput="searchFood()"
+                >
+
+                <div class="categories">
+
+                    <button
+                        class="category-btn active"
+                        onclick="filterCategory('all', this)">
+                        All
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        onclick="filterCategory('mutton', this)">
+                        Mutton
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        onclick="filterCategory('chicken', this)">
+                        Chicken
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        onclick="filterCategory('sides', this)">
+                        Sides & Drinks
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MUTTON ================= -->
+
+            <h3 class="category-title">
+                Mutton Specialties
+            </h3>
+
+            <div class="menu-grid">
+
+
+                <div class="food-card"
+                     data-category="mutton"
+                     data-name="Mutton Seekh Kabab">
+
+                    <img
+                        src="https://i.ibb.co/dsFb1j0X/mutton-seekh-kabab.jpg"
+                        alt="Mutton Seekh Kabab">
+
+                    <div class="food-info">
+
+                        <
