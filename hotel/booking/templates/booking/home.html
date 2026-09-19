@@ -1,825 +1,3169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Amin Kabab House | Mirpur Azad Kashmir</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f5f0;
-            color: #222;
-            line-height: 1.6;
-        }
-
-        /* ================= HEADER ================= */
-
-        header {
-            background: linear-gradient(135deg, #111111, #292929);
-            color: white;
-            text-align: center;
-            padding: 28px 15px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.28);
-        }
-
-        header h1 {
-            font-size: 30px;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        header p {
-            color: #e4bd55;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        nav a,
-        .cart-button {
-            color: white;
-            background: transparent;
-            text-decoration: none;
-            padding: 8px 16px;
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 25px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        nav a:hover,
-        .cart-button:hover {
-            background: #d6a83f;
-            color: #111;
-            border-color: #d6a83f;
-        }
-
-        .cart-button {
-            position: relative;
-        }
-
-        #cartCount {
-            position: absolute;
-            top: -8px;
-            right: -7px;
-            background: #e53935;
-            color: white;
-            width: 21px;
-            height: 21px;
-            border-radius: 50%;
-            font-size: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            min-height: 450px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
-
-            background:
-                linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
-                url("https://i.ibb.co/dsFb1j0X/mutton-seekh-kabab.jpg")
-                center/cover no-repeat;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            color: white;
-        }
-
-        .hero h2 {
-            font-size: 50px;
-            line-height: 1.15;
-            margin-bottom: 16px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #f2f2f2;
-            margin-bottom: 28px;
-        }
-
-        .hero-btn {
-            display: inline-block;
-            background: #d6a83f;
-            color: #111;
-            text-decoration: none;
-            padding: 14px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .hero-btn:hover {
-            background: #f0ca68;
-            transform: translateY(-3px);
-        }
-
-        /* ================= FEATURES ================= */
-
-        .features {
-            max-width: 1150px;
-            margin: -35px auto 0;
-            position: relative;
-            z-index: 5;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            padding: 0 20px;
-        }
-
-        .feature {
-            background: white;
-            border-radius: 16px;
-            padding: 20px 12px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
-            transition: 0.3s;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 28px;
-            margin-bottom: 6px;
-        }
-
-        .feature h3 {
-            font-size: 15px;
-        }
-
-        .feature p {
-            color: #777;
-            font-size: 12px;
-        }
-
-        /* ================= GENERAL ================= */
-
-        section {
-            padding: 65px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .section-title h2 {
-            font-size: 35px;
-            margin-bottom: 7px;
-        }
-
-        .section-title p {
-            color: #777;
-        }
-
-        /* ================= SEARCH ================= */
-
-        .menu-tools {
-            max-width: 1100px;
-            margin: 0 auto 35px;
-        }
-
-        .search-box {
-            width: 100%;
-            padding: 15px 18px;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            font-size: 15px;
-            outline: none;
-            background: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .search-box:focus {
-            border-color: #d6a83f;
-        }
-
-        .categories {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .category-btn {
-            border: 1px solid #ddd;
-            background: white;
-            padding: 9px 17px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .category-btn:hover,
-        .category-btn.active {
-            background: #d6a83f;
-            border-color: #d6a83f;
-        }
-
-        /* ================= MENU ================= */
-
-        .menu-section {
-            max-width: 1250px;
-            margin: auto;
-        }
-
-        .category-title {
-            font-size: 25px;
-            margin: 40px 0 20px;
-            border-left: 5px solid #d6a83f;
-            padding-left: 12px;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-            gap: 25px;
-        }
-
-        .food-card {
-            background: white;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid #eee;
-            box-shadow: 0 7px 25px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
-
-        .food-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 32px rgba(0,0,0,0.15);
-        }
-
-        .food-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .food-info {
-            padding: 17px;
-        }
-
-        .food-info h3 {
-            font-size: 19px;
-            margin-bottom: 9px;
-        }
-
-        .price {
-            display: inline-block;
-            color: #946b10;
-            background: #fff7df;
-            border: 1px solid #ead18b;
-            padding: 6px 11px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 13px;
-        }
-
-        .add-btn {
-            width: 100%;
-            margin-top: 14px;
-            padding: 11px;
-            border: none;
-            border-radius: 9px;
-            background: #222;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .add-btn:hover {
-            background: #d6a83f;
-            color: #111;
-        }
-
-        /* ================= ABOUT ================= */
-
-        .about {
-            background: #202020;
-            color: white;
-            text-align: center;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .about h2 {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .about p {
-            color: #ddd;
-        }
-
-        /* ================= LOCATION ================= */
-
-        .location {
-            background: #f1eee7;
-            text-align: center;
-        }
-
-        .location-box {
-            max-width: 650px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 18px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
-
-        .location-box h2 {
-            margin-bottom: 12px;
-        }
-
-        .location-box p {
-            color: #555;
-            margin-bottom: 5px;
-        }
-
-        /* ================= CART ================= */
-
-        .cart-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.55);
-            z-index: 2000;
-            display: none;
-        }
-
-        .cart-overlay.show {
-            display: block;
-        }
-
-        .cart-panel {
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: 430px;
-            max-width: 100%;
-            height: 100vh;
-            background: white;
-            z-index: 2001;
-            padding: 22px;
-            overflow-y: auto;
-            transform: translateX(100%);
-            transition: 0.35s;
-        }
-
-        .cart-overlay.show .cart-panel {
-            transform: translateX(0);
-        }
-
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .cart-header h2 {
-            font-size: 23px;
-        }
-
-        .close-cart {
-            border: none;
-            background: #eee;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        #cartItems {
-            padding: 15px 0;
-        }
-
-        .cart-item {
-            border-bottom: 1px solid #eee;
-            padding: 14px 0;
-        }
-
-        .cart-item-top {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .cart-item h4 {
-            font-size: 15px;
-        }
-
-        .cart-item-price {
-            font-weight: bold;
-        }
-
-        .quantity-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 9px;
-        }
-
-        .quantity-row button {
-            width: 29px;
-            height: 29px;
-            border: none;
-            border-radius: 6px;
-            background: #eee;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .remove-btn {
-            margin-left: auto;
-            border: none !important;
-            background: transparent !important;
-            color: #d33;
-            cursor: pointer;
-        }
-
-        .cart-total {
-            border-top: 2px solid #222;
-            padding-top: 15px;
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-between;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        /* ================= ORDER FORM ================= */
-
-        .order-form {
-            margin-top: 20px;
-        }
-
-        .order-form h3 {
-            margin-bottom: 12px;
-        }
-
-        .order-form input,
-        .order-form textarea,
-        .order-form select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            font-family: inherit;
-            outline: none;
-        }
-
-        .order-form textarea {
-            min-height: 75px;
-            resize: vertical;
-        }
-
-        .whatsapp-btn {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 9px;
-            background: #25D366;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .empty-cart {
-            text-align: center;
-            color: #777;
-            padding: 35px 10px;
-        }
-
-        /* ================= DEVELOPER ================= */
-
-        .developer {
-            background: #111;
-            text-align: center;
-            color: white;
-            padding: 40px 20px;
-            border-top: 1px solid #333;
-        }
-
-        .developer-small {
-            color: #999;
-            font-size: 13px;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-
-        .developer-name {
-            font-size: 25px;
-            font-weight: bold;
-            color: #e4bd55;
-            letter-spacing: 0.5px;
-        }
-
-        .developer-line {
-            width: 55px;
-            height: 3px;
-            background: #d6a83f;
-            margin: 12px auto 0;
-            border-radius: 10px;
-        }
-
-        /* ================= TOAST ================= */
-
-        .toast {
-            position: fixed;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: #222;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            z-index: 3000;
-            opacity: 0;
-            transition: 0.35s;
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            background: #080808;
-            color: #999;
-            text-align: center;
-            padding: 22px 15px;
-        }
-
-        footer strong {
-            color: #d6a83f;
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 800px) {
-
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero h2 {
-                font-size: 38px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            header h1 {
-                font-size: 24px;
-            }
-
-            .hero {
-                min-height: 370px;
-            }
-
-            .hero h2 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 50px 15px;
-            }
-
-            .section-title h2 {
-                font-size: 28px;
-            }
-
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .food-card img {
-                height: 230px;
-            }
-
-            .features {
-                padding: 0 12px;
-                gap: 10px;
-            }
-
-            .feature {
-                padding: 15px 7px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amin Kabab House | Mirpur Azad Kashmir</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080808;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* ================= GLOBAL ================= */
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+.gold{
+    color:#f5b301;
+}
+
+.section{
+    padding:90px 0;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-heading .mini{
+    color:#f5b301;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-heading h2{
+    font-size:clamp(32px,5vw,52px);
+    margin:12px 0;
+}
+
+.section-heading p{
+    color:#999;
+    max-width:650px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(5,5,5,.82);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+    width:min(1250px,94%);
+    margin:auto;
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    color:#f5b301;
+    font-size:22px;
+    font-weight:1000;
+    letter-spacing:.5px;
+}
+
+.logo small{
+    display:block;
+    color:#aaa;
+    font-size:9px;
+    letter-spacing:3px;
+    margin-top:4px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#eee;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#f5b301;
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.nav-btn{
+    border:0;
+    padding:11px 15px;
+    border-radius:30px;
+    font-weight:900;
+}
+
+.call-btn{
+    background:#151515;
+    color:#fff;
+    border:1px solid #333;
+}
+
+.cart-btn{
+    background:#f5b301;
+    color:#000;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.55),rgba(0,0,0,.75)),
+    url("https://i.ibb.co/KzK40ZcW/file-0000000058e48211b756dce3c38da0fe.png")
+    center/cover no-repeat;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:auto 0 0;
+    height:180px;
+    background:linear-gradient(transparent,#080808);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding-top:80px;
+}
+
+.hero-badge{
+    display:inline-flex;
+    padding:10px 17px;
+    border-radius:50px;
+    border:1px solid #f5b301;
+    background:rgba(245,179,1,.1);
+    color:#f5b301;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.hero h1{
+    max-width:850px;
+    font-size:clamp(48px,8vw,90px);
+    line-height:.94;
+    margin:22px 0;
+}
+
+.hero h1 span{
+    color:#f5b301;
+}
+
+.hero p{
+    max-width:650px;
+    color:#ddd;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 23px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:900;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-gold{
+    background:#f5b301;
+    color:#000;
+}
+
+.btn-dark{
+    color:#fff;
+    border:1px solid #555;
+    background:rgba(0,0,0,.4);
+}
+
+/* ================= HERO STATS ================= */
+
+.hero-stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:35px;
+}
+
+.hero-stat{
+    min-width:130px;
+    padding:15px 18px;
+    background:rgba(10,10,10,.65);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:15px;
+}
+
+.hero-stat strong{
+    display:block;
+    color:#f5b301;
+    font-size:20px;
+}
+
+.hero-stat span{
+    color:#aaa;
+    font-size:11px;
+}
+
+/* ================= QUICK CARDS ================= */
+
+.quick-section{
+    margin-top:-55px;
+    position:relative;
+    z-index:10;
+}
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.quick-card{
+    background:#131313;
+    border:1px solid #292929;
+    padding:23px;
+    border-radius:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.quick-card:hover{
+    transform:translateY(-5px);
+    border-color:#f5b301;
+}
+
+.quick-card .icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.quick-card h3{
+    font-size:16px;
+}
+
+.quick-card p{
+    color:#888;
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* ================= DEAL ================= */
+
+.deal{
+    background:
+    radial-gradient(circle at top right,rgba(245,179,1,.15),transparent 35%),
+    #111;
+}
+
+.deal-box{
+    border:1px solid #4b3b09;
+    border-radius:25px;
+    padding:35px;
+    background:linear-gradient(120deg,#17130a,#101010);
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:30px;
+    align-items:center;
+}
+
+.deal-label{
+    color:#f5b301;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:3px;
+}
+
+.deal-box h2{
+    font-size:42px;
+    margin:12px 0;
+}
+
+.deal-box p{
+    color:#aaa;
+    line-height:1.7;
+}
+
+.deal-items{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:20px 0;
+}
+
+.deal-items span{
+    padding:8px 12px;
+    background:#202020;
+    border-radius:30px;
+    color:#ddd;
+    font-size:12px;
+}
+
+.deal-price{
+    font-size:30px;
+    color:#f5b301;
+    font-weight:1000;
+}
+
+/* ================= MENU ================= */
+
+.menu-tools{
+    margin-bottom:35px;
+}
+
+.search{
+    max-width:650px;
+    margin:0 auto 22px;
+    position:relative;
+}
+
+.search input{
+    width:100%;
+    padding:17px 22px;
+    border-radius:40px;
+    border:1px solid #333;
+    background:#131313;
+    color:#fff;
+    outline:none;
+    font-size:15px;
+}
+
+.search input:focus{
+    border-color:#f5b301;
+}
+
+.categories{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.category{
+    border:1px solid #333;
+    background:#131313;
+    color:#ddd;
+    padding:10px 17px;
+    border-radius:30px;
+    font-weight:800;
+}
+
+.category.active,
+.category:hover{
+    background:#f5b301;
+    color:#000;
+    border-color:#f5b301;
+}
+
+/* ================= FOOD GRID ================= */
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.food-card{
+    background:#121212;
+    border:1px solid #292929;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    transition:.35s;
+}
+
+.food-card:hover{
+    transform:translateY(-8px);
+    border-color:#f5b301;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.food-image-wrap{
+    height:245px;
+    position:relative;
+    overflow:hidden;
+}
+
+.food-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.food-card:hover .food-image{
+    transform:scale(1.06);
+}
+
+.favorite{
+    position:absolute;
+    top:13px;
+    right:13px;
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:50%;
+    background:rgba(0,0,0,.7);
+    color:#fff;
+    font-size:19px;
+    z-index:2;
+}
+
+.favorite.active{
+    color:#ff4d67;
+}
+
+.food-body{
+    padding:19px;
+}
+
+.food-body h3{
+    font-size:19px;
+    margin-bottom:7px;
+}
+
+.food-body p{
+    color:#888;
+    font-size:12px;
+    line-height:1.5;
+    min-height:36px;
+}
+
+.food-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:17px;
+    gap:10px;
+}
+
+.food-price{
+    color:#f5b301;
+    font-size:21px;
+    font-weight:1000;
+}
+
+.add{
+    border:0;
+    background:#f5b301;
+    color:#000;
+    padding:10px 16px;
+    border-radius:30px;
+    font-weight:900;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:#101010;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-img{
+    width:100%;
+    border-radius:25px;
+    border:1px solid #333;
+}
+
+.about-text .mini{
+    color:#f5b301;
+    letter-spacing:4px;
+    font-weight:900;
+    font-size:12px;
+}
+
+.about-text h2{
+    font-size:clamp(32px,5vw,52px);
+    margin:12px 0 20px;
+}
+
+.about-text p{
+    color:#999;
+    line-height:1.8;
+    margin-bottom:16px;
+}
+
+.about-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:25px 0;
+}
+
+.about-points div{
+    background:#181818;
+    border:1px solid #282828;
+    padding:13px;
+    border-radius:12px;
+    color:#ddd;
+    font-size:13px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.gallery-item{
+    height:210px;
+    overflow:hidden;
+    border-radius:17px;
+    border:1px solid #292929;
+    position:relative;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+
+/* =========================================================
+   CUSTOMER STAR RATING - NEW FEATURE
+   ========================================================= */
+
+.rating-section{
+    background:
+    radial-gradient(circle at center,rgba(245,179,1,.08),transparent 45%),
+    #0b0b0b;
+}
+
+.rating-box{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    background:linear-gradient(145deg,#171717,#0e0e0e);
+    border:1px solid #353535;
+    border-radius:28px;
+    padding:45px 25px;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.rating-box h2{
+    font-size:clamp(30px,5vw,46px);
+    margin:10px 0;
+}
+
+.rating-box p{
+    color:#999;
+    line-height:1.7;
+}
+
+.rating-stars{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:4px;
+    margin:28px 0 12px;
+    direction:ltr;
+    touch-action:none;
+    user-select:none;
+}
+
+.rating-star{
+    position:relative;
+    width:48px;
+    height:58px;
+    border:0;
+    background:none;
+    color:#333;
+    font-size:47px;
+    line-height:58px;
+    padding:0;
+    transition:.2s;
+    cursor:pointer;
+    touch-action:none;
+}
+
+.rating-star:hover{
+    transform:scale(1.12);
+}
+
+.rating-value{
+    font-size:28px;
+    font-weight:1000;
+    color:#f5b301;
+    min-height:35px;
+}
+
+.rating-label{
+    color:#aaa;
+    font-size:13px;
+    margin-top:5px;
+}
+
+.rating-submit{
+    margin-top:20px;
+    border:0;
+    padding:14px 28px;
+    border-radius:35px;
+    background:#f5b301;
+    color:#000;
+    font-weight:1000;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.rating-submit:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(245,179,1,.2);
+}
+
+.rating-result{
+    margin-top:28px;
+    padding-top:25px;
+    border-top:1px solid #292929;
+}
+
+.average-rating{
+    font-size:38px;
+    color:#f5b301;
+    font-weight:1000;
+}
+
+.rating-result-stars{
+    color:#f5b301;
+    font-size:25px;
+    letter-spacing:3px;
+    margin:7px 0;
+}
+
+.rating-count{
+    color:#777;
+    font-size:12px;
+}
+
+.rating-message{
+    color:#25d366;
+    font-weight:800;
+    margin-top:12px;
+    min-height:20px;
+}
+
+@media(max-width:600px){
+
+    .rating-box{
+        padding:35px 15px;
+    }
+
+    .rating-star{
+        width:38px;
+        font-size:38px;
+    }
+
+}
+
+
+/* ================= REVIEWS ================= */
+
+.reviews{
+    background:#101010;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.review{
+    background:#151515;
+    border:1px solid #292929;
+    padding:25px;
+    border-radius:18px;
+}
+
+.stars{
+    color:#f5b301;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.review p{
+    color:#aaa;
+    line-height:1.7;
+}
+
+.review strong{
+    display:block;
+    margin-top:18px;
+}
+
+/* ================= INFO ================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.info-card{
+    text-align:center;
+    background:#131313;
+    border:1px solid #292929;
+    padding:30px 20px;
+    border-radius:18px;
+}
+
+.info-icon{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.info-card h3{
+    margin-bottom:8px;
+}
+
+.info-card p{
+    color:#999;
+    line-height:1.6;
+}
+
+/* ================= CART ================= */
+
+.cart-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:1998;
+    display:none;
+}
+
+.cart-overlay.show{
+    display:block;
+}
+
+.cart{
+    position:fixed;
+    right:-450px;
+    top:0;
+    width:min(430px,100%);
+    height:100vh;
+    background:#0d0d0d;
+    z-index:2000;
+    border-left:1px solid #333;
+    display:flex;
+    flex-direction:column;
+    transition:.4s;
+}
+
+.cart.open{
+    right:0;
+}
+
+.cart-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:21px;
+    border-bottom:1px solid #292929;
+}
+
+.close{
+    border:0;
+    background:none;
+    color:#fff;
+    font-size:30px;
+}
+
+.cart-list{
+    flex:1;
+    overflow-y:auto;
+    padding:20px;
+}
+
+.empty{
+    text-align:center;
+    color:#777;
+    padding:50px 20px;
+}
+
+.cart-row{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:16px 0;
+    border-bottom:1px solid #242424;
+}
+
+.cart-row h4{
+    margin-bottom:7px;
+}
+
+.cart-row small{
+    color:#f5b301;
+}
+
+.qty{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:10px;
+}
+
+.qty button{
+    width:27px;
+    height:27px;
+    border:0;
+    border-radius:50%;
+    background:#f5b301;
+    color:#000;
+    font-weight:900;
+}
+
+.cart-footer{
+    padding:20px;
+    border-top:1px solid #292929;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:22px;
+    font-weight:1000;
+    margin-bottom:15px;
+}
+
+.checkout{
+    width:100%;
+    padding:16px;
+    border:0;
+    border-radius:35px;
+    background:#25d366;
+    color:#fff;
+    font-weight:1000;
+    font-size:15px;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translate(-50%,100px);
+    background:#f5b301;
+    color:#000;
+    padding:13px 20px;
+    border-radius:30px;
+    font-weight:900;
+    z-index:3000;
+    transition:.35s;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+}
+
+/* ================= TOP BUTTON ================= */
+
+.top{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid #444;
+    background:#151515;
+    color:#f5b301;
+    z-index:100;
+    font-size:18px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#050505;
+    border-top:1px solid #222;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:35px;
+}
+
+.footer-logo{
+    color:#f5b301;
+    font-size:27px;
+    font-weight:1000;
+}
+
+.footer-col h3{
+    margin-bottom:15px;
+}
+
+.footer-col p,
+.footer-col a{
+    display:block;
+    color:#888;
+    text-decoration:none;
+    line-height:2;
+}
+
+.footer-col a:hover{
+    color:#f5b301;
+}
+
+.copyright{
+    text-align:center;
+    color:#666;
+    border-top:1px solid #222;
+    margin-top:35px;
+    padding-top:22px;
+}
+
+.developer{
+    color:#777;
+    margin-top:8px;
+}
+
+.developer strong{
+    color:#f5b301;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .quick-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .food-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .deal-box{
+        grid-template-columns:1fr;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        min-height:68px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .logo small{
+        font-size:7px;
+    }
+
+    .call-btn{
+        display:none;
+    }
+
+    .hero{
+        min-height:760px;
+    }
+
+    .hero h1{
+        font-size:53px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-stat{
+        min-width:105px;
+    }
+
+    .quick-section{
+        margin-top:0;
+        padding-top:20px;
+    }
+
+    .quick-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .section{
+        padding:65px 0;
+    }
+
+    .food-grid{
+        grid-template-columns:1fr;
+    }
+
+    .food-image-wrap{
+        height:260px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-item{
+        height:160px;
+    }
+
+    .about-points{
+        grid-template-columns:1fr;
+    }
+
+    .deal-box{
+        padding:25px;
+    }
+
+    .deal-box h2{
+        font-size:32px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+<!-- ================= HEADER ================= -->
 
-    <header id="home">
+<header>
 
-        <h1>Amin Kabab House</h1>
+<nav class="navbar">
 
-        <p>Mirpur Azad Kashmir • Purani Hatti</p>
+<div class="logo">
+AMIN KABAB HOUSE
+<small>MIRPUR • AZAD KASHMIR</small>
+</div>
 
-        <nav>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-            <a href="#home">Home</a>
+<div class="nav-actions">
 
-            <a href="#menu">Menu</a>
+<a class="nav-btn call-btn"
+href="tel:03498037743">
+📞 Call
+</a>
 
-            <a href="#about">About</a>
+<button class="nav-btn cart-btn"
+onclick="openCart()">
+🛒 Cart <span id="cartCount">0</span>
+</button>
 
-            <button class="cart-button" onclick="openCart()">
-                🛒 Cart
-                <span id="cartCount">0</span>
-            </button>
+</div>
 
-        </nav>
+</nav>
 
-    </header>
-
-
-    <!-- ================= HERO ================= -->
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <h2>Welcome to Amin Kabab House</h2>
-
-            <p>
-                Authentic Pakistani taste,
-                fresh BBQ, Karahi, Handi and delicious sides.
-            </p>
-
-            <a href="#menu" class="hero-btn">
-                View Our Menu
-            </a>
-
-        </div>
-
-    </section>
+</header>
 
 
-    <!-- ================= FEATURES ================= -->
+<!-- ================= HERO ================= -->
 
-    <div class="features">
+<section class="hero" id="home">
 
-        <div class="feature">
-            <div class="feature-icon">🍖</div>
-            <h3>Fresh Food</h3>
-            <p>Freshly prepared dishes</p>
-        </div>
+<div class="container hero-content">
 
-        <div class="feature">
-            <div class="feature-icon">🔥</div>
-            <h3>Hot & Delicious</h3>
-            <p>Prepared fresh for you</p>
-        </div>
+<div class="hero-badge">
+🔥 AUTHENTIC PAKISTANI TASTE
+</div>
 
-        <div class="feature">
-            <div class="feature-icon">⭐</div>
-            <h3>Quality Taste</h3>
-            <p>Traditional Pakistani taste</p>
-        </div>
+<h1>
+Real Taste.<br>
+<span>Real Tradition.</span>
+</h1>
 
-        <div class="feature">
-            <div class="feature-icon">📱</div>
-            <h3>Easy Ordering</h3>
-            <p>Order directly on WhatsApp</p>
-        </div>
+<p>
+Welcome to Amin Kabab House — serving delicious
+kabab, tikka, handi, karahai and traditional
+Pakistani food in Mirpur, Azad Kashmir.
+</p>
 
-    </div>
+<div class="hero-buttons">
 
+<a href="#menu" class="btn btn-gold">
+🍽️ Explore Menu
+</a>
 
-    <!-- ================= MENU ================= -->
+<a href="tel:03498037743" class="btn btn-dark">
+📞 Call Restaurant
+</a>
 
-    <section id="menu">
+<a href="https://www.google.com/maps/search/?api=1&query=Purani+Hatiya+Mirpur+Azad+Kashmir"
+target="_blank"
+class="btn btn-dark">
+📍 Get Directions
+</a>
 
-        <div class="menu-section">
+</div>
 
-            <div class="section-title">
+<div class="hero-stats">
 
-                <h2>Our Menu</h2>
+<div class="hero-stat">
+<strong>17+</strong>
+<span>Menu Items</span>
+</div>
 
-                <p>
-                    Select your favourite dishes
-                    and add them to your order.
-                </p>
+<div class="hero-stat">
+<strong>100%</strong>
+<span>Fresh Taste</span>
+</div>
 
-            </div>
+<div class="hero-stat">
+<strong>AJK</strong>
+<span>Mirpur</span>
+</div>
 
+</div>
 
-            <!-- SEARCH -->
+</div>
 
-            <div class="menu-tools">
-
-                <input
-                    type="text"
-                    id="searchInput"
-                    class="search-box"
-                    placeholder="🔎 Search your favourite dish..."
-                    oninput="searchFood()"
-                >
-
-                <div class="categories">
-
-                    <button
-                        class="category-btn active"
-                        onclick="filterCategory('all', this)">
-                        All
-                    </button>
-
-                    <button
-                        class="category-btn"
-                        onclick="filterCategory('mutton', this)">
-                        Mutton
-                    </button>
-
-                    <button
-                        class="category-btn"
-                        onclick="filterCategory('chicken', this)">
-                        Chicken
-                    </button>
-
-                    <button
-                        class="category-btn"
-                        onclick="filterCategory('sides', this)">
-                        Sides & Drinks
-                    </button>
-
-                </div>
-
-            </div>
+</section>
 
 
-            <!-- ================= MUTTON ================= -->
+<!-- ================= QUICK FEATURES ================= -->
 
-            <h3 class="category-title">
-                Mutton Specialties
-            </h3>
+<section class="quick-section">
 
-            <div class="menu-grid">
+<div class="container quick-grid">
+
+<div class="quick-card">
+<div class="icon">🔥</div>
+<h3>Freshly Prepared</h3>
+<p>Fresh food made with care</p>
+</div>
+
+<div class="quick-card">
+<div class="icon">🥘</div>
+<h3>Traditional Recipes</h3>
+<p>Authentic Pakistani taste</p>
+</div>
+
+<div class="quick-card">
+<div class="icon">📲</div>
+<h3>Easy Ordering</h3>
+<p>Order directly on WhatsApp</p>
+</div>
+
+<div class="quick-card">
+<div class="icon">📍</div>
+<h3>Purani Hatiya</h3>
+<p>Mirpur, Azad Kashmir</p>
+</div>
+
+</div>
+
+</section>
 
 
-                <div class="food-card"
-                     data-category="mutton"
-                     data-name="Mutton Seekh Kabab">
+<!-- ================= DEAL ================= -->
 
-                    <img
-                        src="https://i.ibb.co/dsFb1j0X/mutton-seekh-kabab.jpg"
-                        alt="Mutton Seekh Kabab">
+<section class="section deal">
 
-                    <div class="food-info">
+<div class="container">
 
-                        <
+<div class="deal-box">
+
+<div>
+
+<div class="deal-label">
+🔥 AMIN SPECIAL
+</div>
+
+<h2>
+Hungry? Let's Make It Delicious.
+</h2>
+
+<p>
+Choose your favorite dishes from our menu,
+add them to your cart and send your complete
+order directly to the restaurant through WhatsApp.
+</p>
+
+<div class="deal-items">
+<span>🥩 Mutton</span>
+<span>🍗 Chicken</span>
+<span>🥘 Handi</span>
+<span>🔥 Karahai</span>
+<span>🍟 Sides</span>
+<span>☕ Drinks</span>
+</div>
+
+<a href="#menu" class="btn btn-gold">
+Order Your Favorites
+</a>
+
+</div>
+
+<div style="text-align:center">
+
+<div style="font-size:70px">
+🍽️
+</div>
+
+<div class="deal-price">
+PREMIUM TASTE
+</div>
+
+<p>
+Made for food lovers.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= MENU ================= -->
+
+<section class="section" id="menu">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="mini">
+Our Menu
+</div>
+
+<h2>
+Choose Your <span class="gold">Favorite</span>
+</h2>
+
+<p>
+Browse our menu, search your favorite food,
+select quantity and place your order easily.
+</p>
+
+</div>
+
+
+<div class="menu-tools">
+
+<div class="search">
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔎 Search Mutton, Chicken, Roti..."
+oninput="searchMenu()">
+
+</div>
+
+<div class="categories">
+
+<button class="category active"
+onclick="filterMenu('all',this)">
+All
+</button>
+
+<button class="category"
+onclick="filterMenu('mutton',this)">
+🥩 Mutton
+</button>
+
+<button class="category"
+onclick="filterMenu('chicken',this)">
+🍗 Chicken
+</button>
+
+<button class="category"
+onclick="filterMenu('sides',this)">
+🍟 Sides
+</button>
+
+<button class="category"
+onclick="filterMenu('drinks',this)">
+☕ Drinks
+</button>
+
+</div>
+
+</div>
+
+
+<div class="food-grid" id="foodGrid">
+
+
+<!-- 1 -->
+
+<div class="food-card"
+data-category="mutton"
+data-name="Mutton Seekh Kabab">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/gZqNF7jT/Mutton-Seekh-Kabab-2-768x672.webp"
+alt="Mutton Seekh Kabab">
+
+</div>
+
+<div class="food-body">
+
+<h3>Mutton Seekh Kabab</h3>
+
+<p>Special grilled mutton seekh kabab.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">
+Rs 2700
+</div>
+
+<button class="add"
+onclick="addToCart('Mutton Seekh Kabab',2700)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 2 -->
+
+<div class="food-card"
+data-category="mutton"
+data-name="Mutton Kaleji Handi">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/7x9J3bzk/Mutton-Kalaji-2-768x672.webp"
+alt="Mutton Kaleji Handi">
+
+</div>
+
+<div class="food-body">
+
+<h3>Mutton Kaleji Handi</h3>
+
+<p>Rich traditional mutton kaleji handi.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 3000</div>
+
+<button class="add"
+onclick="addToCart('Mutton Kaleji Handi',3000)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 3 -->
+
+<div class="food-card"
+data-category="mutton"
+data-name="Mutton Seekh Tikka">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/gZbcgv24/Mutton-Tikka-Boti-2-768x672.webp"
+alt="Mutton Seekh Tikka">
+
+</div>
+
+<div class="food-body">
+
+<h3>Mutton Seekh Tikka</h3>
+
+<p>Juicy grilled mutton tikka.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 3000</div>
+
+<button class="add"
+onclick="addToCart('Mutton Seekh Tikka',3000)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 4 -->
+
+<div class="food-card"
+data-category="mutton"
+data-name="Mutton Kabab Handi">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/SwGnMLvf/Mutton-Kabab-Handi-2-768x672.webp"
+alt="Mutton Kabab Handi">
+
+</div>
+
+<div class="food-body">
+
+<h3>Mutton Kabab Handi</h3>
+
+<p>Special kabab cooked in traditional handi.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 3700</div>
+
+<button class="add"
+onclick="addToCart('Mutton Kabab Handi',3700)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 5 -->
+
+<div class="food-card"
+data-category="mutton"
+data-name="Mutton Karahai">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/chPnW8T5/Mutton-Handi-2-768x672.webp"
+alt="Mutton Karahai">
+
+</div>
+
+<div class="food-body">
+
+<h3>Mutton Karahai</h3>
+
+<p>Traditional rich and spicy mutton karahai.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 3700</div>
+
+<button class="add"
+onclick="addToCart('Mutton Karahai',3700)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 6 -->
+
+<div class="food-card"
+data-category="chicken"
+data-name="Chicken Kabab Handi">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/WWLFxZ3S/Chicken-Kabab-Handi-2-768x672.webp"
+alt="Chicken Kabab Handi">
+
+</div>
+
+<div class="food-body">
+
+<h3>Chicken Kabab Handi</h3>
+
+<p>Delicious chicken kabab cooked in handi.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 2600</div>
+
+<button class="add"
+onclick="addToCart('Chicken Kabab Handi',2600)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 7 -->
+
+<div class="food-card"
+data-category="chicken"
+data-name="Chicken Handi Boneless">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/NgkrChTR/Chicken-Handi-Boneless-1-768x672-1.webp"
+alt="Chicken Handi Boneless">
+
+</div>
+
+<div class="food-body">
+
+<h3>Chicken Handi Boneless</h3>
+
+<p>Soft boneless chicken in delicious handi.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 2000</div>
+
+<button class="add"
+onclick="addToCart('Chicken Handi Boneless',2000)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 8 -->
+
+<div class="food-card"
+data-category="chicken"
+data-name="Chicken Karahai">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/S7t3G9s0/Chicken-Karahi-2-768x672.webp"
+alt="Chicken Karahai">
+
+</div>
+
+<div class="food-body">
+
+<h3>Chicken Karahai</h3>
+
+<p>Classic Pakistani chicken karahai.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 1600</div>
+
+<button class="add"
+onclick="addToCart('Chicken Karahai',1600)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 9 -->
+
+<div class="food-card"
+data-category="chicken"
+data-name="Chicken Boti">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/6c7pHk0j/Chicken-Tikka-Boti-2-768x672.webp"
+alt="Chicken Boti">
+
+</div>
+
+<div class="food-body">
+
+<h3>Chicken Boti</h3>
+
+<p>Juicy grilled chicken boti.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 2000</div>
+
+<button class="add"
+onclick="addToCart('Chicken Boti',2000)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 10 -->
+
+<div class="food-card"
+data-category="chicken"
+data-name="Chicken Malai Boti">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/VcmqQpVw/Malai-Boti-2-768x672.webp"
+alt="Chicken Malai Boti">
+
+</div>
+
+<div class="food-body">
+
+<h3>Chicken Malai Boti</h3>
+
+<p>Soft creamy and tender malai boti.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 1200</div>
+
+<button class="add"
+onclick="addToCart('Chicken Malai Boti',1200)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 11 -->
+
+<div class="food-card"
+data-category="chicken"
+data-name="Chicken Seekh Kabab">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/xKJnNpzM/Chicken-Seekh-Kabab-2-768x672.webp"
+alt="Chicken Seekh Kabab">
+
+</div>
+
+<div class="food-body">
+
+<h3>Chicken Seekh Kabab</h3>
+
+<p>Freshly grilled chicken seekh kabab.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 2000</div>
+
+<button class="add"
+onclick="addToCart('Chicken Seekh Kabab',2000)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 12 -->
+
+<div class="food-card"
+data-category="sides"
+data-name="French Fries">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/5W0xW2rh/French-Fries-1-768x672-1.webp"
+alt="French Fries">
+
+</div>
+
+<div class="food-body">
+
+<h3>French Fries</h3>
+
+<p>Crispy golden French fries.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 300</div>
+
+<button class="add"
+onclick="addToCart('French Fries',300)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 13 -->
+
+<div class="food-card"
+data-category="sides"
+data-name="Chatni">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/JTw3sBT/Chatni-2-768x672.webp"
+alt="Chatni">
+
+</div>
+
+<div class="food-body">
+
+<h3>Chatni</h3>
+
+<p>Fresh traditional restaurant chatni.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 50</div>
+
+<button class="add"
+onclick="addToCart('Chatni',50)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 14 -->
+
+<div class="food-card"
+data-category="sides"
+data-name="Salad">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/V1jmK9r/Salad-1-768x672.webp"
+alt="Salad">
+
+</div>
+
+<div class="food-body">
+
+<h3>Salad</h3>
+
+<p>Fresh and crunchy salad.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 50</div>
+
+<button class="add"
+onclick="addToCart('Salad',50)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 15 -->
+
+<div class="food-card"
+data-category="sides"
+data-name="Roti">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/srwDyD9/Roti-1-768x672.webp"
+alt="Roti">
+
+</div>
+
+<div class="food-body">
+
+<h3>Roti</h3>
+
+<p>Fresh traditional roti.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 60</div>
+
+<button class="add"
+onclick="addToCart('Roti',60)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 16 -->
+
+<div class="food-card"
+data-category="drinks"
+data-name="Tea">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/F4mqp0qN/Tea-1-768x672.webp"
+alt="Tea">
+
+</div>
+
+<div class="food-body">
+
+<h3>Tea</h3>
+
+<p>Hot traditional tea.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 70</div>
+
+<button class="add"
+onclick="addToCart('Tea',70)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- 17 -->
+
+<div class="food-card"
+data-category="drinks"
+data-name="Qahva">
+
+<div class="food-image-wrap">
+
+<button class="favorite"
+onclick="favorite(this)">
+♡
+</button>
+
+<img class="food-image"
+src="https://i.ibb.co/67rhg1ZZ/Qehwa-1-768x672.webp"
+alt="Qahva">
+
+</div>
+
+<div class="food-body">
+
+<h3>Qahva</h3>
+
+<p>Warm traditional Qahva.</p>
+
+<div class="food-bottom">
+
+<div class="food-price">Rs 30</div>
+
+<button class="add"
+onclick="addToCart('Qahva',30)">
++ Add
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about" id="about">
+
+<div class="container about-grid">
+
+<img
+class="about-img"
+src="https://i.ibb.co/KzK40ZcW/file-0000000058e48211b756dce3c38da0fe.png"
+alt="Amin Kabab House">
+
+<div class="about-text">
+
+<div class="mini">
+About Amin Kabab House
+</div>
+
+<h2>
+A Place For <span class="gold">Real Food Lovers.</span>
+</h2>
+
+<p>
+Amin Kabab House is located in Purani Hatiya,
+Mirpur, Azad Kashmir. We bring traditional
+Pakistani flavors to your table with kabab,
+tikka, handi, karahai and more.
+</p>
+
+<p>
+Choose your favorite food, add it to your cart
+and send your order directly to the restaurant.
+</p>
+
+<div class="about-points">
+
+<div>🔥 Fresh Taste</div>
+<div>🥘 Traditional Food</div>
+<div>🍗 Chicken Specials</div>
+<div>🥩 Mutton Specials</div>
+
+</div>
+
+<a href="#menu" class="btn btn-gold">
+Explore Menu
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="mini">
+Restaurant Gallery
+</div>
+
+<h2>
+A Taste You Can <span class="gold">See.</span>
+</h2>
+
+<p>
+Fresh food, traditional flavors and the
+Amin Kabab House experience.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="https://i.ibb.co/gZqNF7jT/Mutton-Seekh-Kabab-2-768x672.webp"
+alt="Mutton Seekh Kabab">
+</div>
+
+<div class="gallery-item">
+<img src="https://i.ibb.co/7x9J3bzk/Mutton-Kalaji-2-768x672.webp"
+alt="Mutton Kaleji">
+</div>
+
+<div class="gallery-item">
+<img src="https://i.ibb.co/WWLFxZ3S/Chicken-Kabab-Handi-2-768x672.webp"
+alt="Chicken Kabab Handi">
+</div>
+
+<div class="gallery-item">
+<img src="https://i.ibb.co/S7t3G9s0/Chicken-Karahi-2-768x672.webp"
+alt="Chicken Karahai">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CUSTOMER RATING
+     ========================================================= -->
+
+<section class="section rating-section" id="rating">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="mini">
+Customer Rating
+</div>
+
+<h2>
+How Was Your <span class="gold">Experience?</span>
+</h2>
+
+<p>
+Tap anywhere on the stars to give your rating.
+You can select ratings from 1.0 to 5.0.
+</p>
+
+</div>
+
+
+<div class="rating-box">
+
+<h2>
+⭐ Rate Amin Kabab House
+</h2>
+
+<p>
+Your feedback helps us understand your experience.
+</p>
+
+
+<div class="rating-stars" id="ratingStars">
+
+<button class="rating-star"
+data-index="0"
+aria-label="1 star">
+★
+</button>
+
+<button class="rating-star"
+data-index="1"
+aria-label="2 stars">
+★
+</button>
+
+<button class="rating-star"
+data-index="2"
+aria-label="3 stars">
+★
+</button>
+
+<button class="rating-star"
+data-index="3"
+aria-label="4 stars">
+★
+</button>
+
+<button class="rating-star"
+data-index="4"
+aria-label="5 stars">
+★
+</button>
+
+</div>
+
+
+<div class="rating-value" id="ratingValue">
+0.0 / 5.0
+</div>
+
+<div class="rating-label" id="ratingLabel">
+Tap the stars to choose your rating
+</div>
+
+
+<button class="rating-submit"
+onclick="submitRating()">
+⭐ Submit Rating
+</button>
+
+
+<div class="rating-result">
+
+<div class="average-rating"
+id="averageRating">
+0.0
+</div>
+
+<div class="rating-result-stars"
+id="averageStars">
+☆☆☆☆☆
+</div>
+
+<div class="rating-count"
+id="ratingCount">
+0 ratings
+</div>
+
+<div class="rating-message"
+id="ratingMessage">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="section reviews" id="reviews">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="mini">
+Customer Experience
+</div>
+
+<h2>
+Made For <span class="gold">Food Lovers.</span>
+</h2>
+
+<p>
+A premium dining experience starts with
+great food and friendly service.
+</p>
+
+</div>
+
+<div class="review-grid">
+
+<div class="review">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“Fresh food, traditional taste and a great
+place to enjoy kabab and karahai.”
+</p>
+
+<strong>— Amin Kabab House Customer</strong>
+
+</div>
+
+<div class="review">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“The menu is easy to browse and ordering
+is very convenient.”
+</p>
+
+<strong>— Happy Customer</strong>
+
+</div>
+
+<div class="review">
+
+<div class="stars">★★★★★</div>
+
+<p>
+“Great Pakistani flavors and a beautiful
+restaurant experience.”
+</p>
+
+<strong>— Food Lover</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="mini">
+Visit Us
+</div>
+
+<h2>
+Come & Enjoy <span class="gold">The Taste.</span>
+</h2>
+
+</div>
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<div class="info-icon">📍</div>
+
+<h3>Location</h3>
+
+<p>
+Purani Hatiya<br>
+Mirpur, Azad Kashmir
+</p>
+
+</div>
+
+<div class="info-card">
+
+<div class="info-icon">📞</div>
+
+<h3>Restaurant Number</h3>
+
+<p>
+03498037743
+</p>
+
+<br>
+
+<a href="tel:03498037743"
+class="btn btn-gold">
+Call Now
+</a>
+
+</div>
+
+<div class="info-card">
+
+<div class="info-icon">🕐</div>
+
+<h3>Visit Amin Kabab House</h3>
+
+<p>
+Enjoy our menu and traditional
+Pakistani food experience.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-col">
+
+<div class="footer-logo">
+AMIN KABAB HOUSE
+</div>
+
+<p>
+Premium Pakistani food in
+Mirpur, Azad Kashmir.
+</p>
+
+<p>
+📍 Purani Hatiya, Mirpur, AJK
+</p>
+
+<p>
+📞 03498037743
+</p>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Quick Links</h3>
+
+<a href="#home">Home</a>
+<a href="#menu">Menu</a>
+<a href="#about">About</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Order</h3>
+
+<a href="#menu">Browse Menu</a>
+<a href="#menu">Chicken</a>
+<a href="#menu">Mutton</a>
+<a href="#menu">Sides</a>
+<a href="#menu">Drinks</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Amin Kabab House. All Rights Reserved.
+
+<div class="developer">
+Website developed by
+<strong>Mohammed Ammar Umar</strong>
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-overlay"
+id="cartOverlay"
+onclick="closeCart()">
+</div>
+
+<div class="cart" id="cart">
+
+<div class="cart-head">
+
+<h2>🛒 Your Order</h2>
+
+<button class="close"
+onclick="closeCart()">
+×
+</button>
+
+</div>
+
+<div class="cart-list"
+id="cartList">
+
+<div class="empty">
+Your cart is empty.<br>
+Add something delicious!
+</div>
+
+</div>
+
+<div class="cart-footer">
+
+<div class="total">
+
+<span>Total</span>
+
+<span id="total">
+Rs 0
+</span>
+
+</div>
+
+<button class="checkout"
+onclick="whatsappOrder()">
+📲 Send Order on WhatsApp
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+Added to cart ✓
+</div>
+
+
+<!-- ================= TOP ================= -->
+
+<button class="top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+
+<script>
+
+/* ================= CART ================= */
+
+let cart=[];
+
+function addToCart(name,price){
+
+const item=cart.find(x=>x.name===name);
+
+if(item){
+item.qty++;
+}else{
+cart.push({
+name:name,
+price:price,
+qty:1
+});
+}
+
+updateCart();
+
+openCart();
+
+showToast(name+" added to cart ✓");
+
+}
+
+
+function updateCart(){
+
+const list=document.getElementById("cartList");
+const totalBox=document.getElementById("total");
+const count=document.getElementById("cartCount");
+
+if(cart.length===0){
+
+list.innerHTML=
+'<div class="empty">Your cart is empty.<br>Add something delicious!</div>';
+
+totalBox.innerText="Rs 0";
+count.innerText="0";
+
+return;
+}
+
+let html="";
+let total=0;
+let itemCount=0;
+
+cart.forEach((item,index)=>{
+
+const subtotal=item.price*item.qty;
+
+total+=subtotal;
+itemCount+=item.qty;
+
+html+=`
+
+<div class="cart-row">
+
+<div>
+
+<h4>${item.name}</h4>
+
+<small>
+Rs ${item.price}
+</small>
+
+<div class="qty">
+
+<button onclick="changeQty(${index},-1)">−</button>
+
+<strong>${item.qty}</strong>
+
+<button onclick="changeQty(${index},1)">+</button>
+
+</div>
+
+</div>
+
+<strong>
+Rs ${subtotal}
+</strong>
+
+</div>
+
+`;
+
+});
+
+list.innerHTML=html;
+
+totalBox.innerText="Rs "+total;
+count.innerText=itemCount;
+
+}
+
+
+function changeQty(index,change){
+
+cart[index].qty+=change;
+
+if(cart[index].qty<=0){
+cart.splice(index,1);
+}
+
+updateCart();
+
+}
+
+
+function openCart(){
+
+document.getElementById("cart")
+.classList.add("open");
+
+document.getElementById("cartOverlay")
+.classList.add("show");
+
+}
+
+
+function closeCart(){
+
+document.getElementById("cart")
+.classList.remove("open");
+
+document.getElementById("cartOverlay")
+.classList.remove("show");
+
+}
+
+
+/* ================= WHATSAPP ================= */
+
+function whatsappOrder(){
+
+if(cart.length===0){
+
+alert("Please add items to your cart first.");
+
+return;
+
+}
+
+let message=
+"🍽️ *AMIN KABAB HOUSE - NEW ORDER*%0A%0A";
+
+let total=0;
+
+cart.forEach(item=>{
+
+const subtotal=item.price*item.qty;
+
+total+=subtotal;
+
+message+=
+"• "+item.name+
+" x"+item.qty+
+" = Rs "+subtotal+
+"%0A";
+
+});
+
+message+=
+"%0A💰 *TOTAL: Rs "+total+"*"+
+"%0A%0A📍 Amin Kabab House"+
+"%0A📍 Purani Hatiya, Mirpur, Azad Kashmir";
+
+
+window.open(
+"https://wa.me/923498037743?text="+message,
+"_blank"
+);
+
+}
+
+
+/* ================= SEARCH ================= */
+
+function searchMenu(){
+
+const query=
+document.getElementById("searchInput")
+.value
+.toLowerCase();
+
+document
+.querySelectorAll(".food-card")
+.forEach(card=>{
+
+const name=
+card.dataset.name.toLowerCase();
+
+card.style.display=
+name.includes(query)
+?"block"
+:"none";
+
+});
+
+}
+
+
+/* ================= FILTER ================= */
+
+function filterMenu(category,button){
+
+document
+.querySelectorAll(".category")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+document
+.querySelectorAll(".food-card")
+.forEach(card=>{
+
+if(
+category==="all" ||
+card.dataset.category===category
+){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+document.getElementById("searchInput").value="";
+
+}
+
+
+/* ================= FAVORITES ================= */
+
+function favorite(button){
+
+button.classList.toggle("active");
+
+if(button.classList.contains("active")){
+
+button.innerText="♥";
+showToast("Added to favorites ❤️");
+
+}else{
+
+button.innerText="♡";
+
+}
+
+}
+
+
+/* =========================================================
+   CUSTOMER STAR RATING - JAVASCRIPT
+   ========================================================= */
+
+let selectedRating=0;
+
+let savedRatings=[];
+
+try{
+
+savedRatings=
+JSON.parse(
+localStorage.getItem("aminKababRatings") || "[]"
+);
+
+if(!Array.isArray(savedRatings)){
+savedRatings=[];
+}
+
+}catch(error){
+
+savedRatings=[];
+
+}
+
+
+const ratingStars=
+document.querySelectorAll(".rating-star");
+
+
+/* -------- SET RATING -------- */
+
+function setRating(rating){
+
+rating=
+Math.max(
+0.1,
+Math.min(
+5,
+Math.round(rating*10)/10
+)
+);
+
+selectedRating=rating;
+
+
+/* Update each star with partial gold fill */
+
+ratingStars.forEach((star,index)=>{
+
+const fill=
+Math.max(
+0,
+Math.min(
+1,
+rating-index
+)
+);
+
+const percent=
+Math.round(fill*100);
+
+star.style.background=
+`linear-gradient(
+90deg,
+#f5b301 ${percent}%,
+#333 ${percent}%
+)`;
+
+star.style.webkitBackgroundClip="text";
+star.style.webkitTextFillColor="transparent";
+star.style.backgroundClip="text";
+
+});
+
+
+document.getElementById("ratingValue").innerText=
+rating.toFixed(1)+" / 5.0";
+
+
+document.getElementById("ratingLabel").innerText=
+"Your selected rating: "+rating.toFixed(1)+" ⭐";
+
+}
+
+
+/* -------- STAR TOUCH / MOUSE -------- */
+
+ratingStars.forEach((star,index)=>{
+
+star.addEventListener(
+"pointerdown",
+function(event){
+
+const rect=
+star.getBoundingClientRect();
+
+let position=
+(event.clientX-rect.left)/rect.width;
+
+
+/* Keep position between 0 and 1 */
+
+position=
+Math.max(
+0,
+Math.min(
+1,
+position
+)
+);
+
+
+/* Convert star position into 0.1 rating */
+
+let rating=
+index + Math.ceil(position*10)/10;
+
+
+/* If tapping the extreme left */
+
+if(position<=0.05){
+rating=index+0.1;
+}
+
+
+/* Maximum rating */
+
+rating=
+Math.min(
+5,
+Math.max(
+0.1,
+rating
+)
+);
+
+setRating(rating);
+
+},
+{
+passive:true
+}
+);
+
+});
+
+
+/* -------- SUBMIT RATING -------- */
+
+function submitRating(){
+
+if(selectedRating<=0){
+
+showToast("Please select a star rating first ⭐");
+
+document.getElementById("ratingLabel").innerText=
+"Please tap the stars to choose a rating.";
+
+return;
+
+}
+
+
+/* Save rating */
+
+savedRatings.push(selectedRating);
+
+localStorage.setItem(
+"aminKababRatings",
+JSON.stringify(savedRatings)
+);
+
+
+/* Update average */
+
+updateAverageRating();
+
+
+document.getElementById("ratingMessage").innerText=
+"✓ Thank you! Your "+selectedRating.toFixed(1)+" star rating was recorded.";
+
+
+/* Reset selected rating */
+
+selectedRating=0;
+
+ratingStars.forEach(star=>{
+
+star.style.background="";
+star.style.webkitBackgroundClip="";
+star.style.webkitTextFillColor="";
+star.style.backgroundClip="";
+
+});
+
+document.getElementById("ratingValue").innerText=
+"0.0 / 5.0";
+
+document.getElementById("ratingLabel").innerText=
+"Tap the stars to give another rating";
+
+showToast("Thank you for your rating ⭐");
+
+}
+
+
+/* -------- AVERAGE RATING -------- */
+
+function updateAverageRating(){
+
+const averageBox=
+document.getElementById("averageRating");
+
+const averageStars=
+document.getElementById("averageStars");
+
+const ratingCount=
+document.getElementById("ratingCount");
+
+
+if(savedRatings.length===0){
+
+averageBox.innerText="0.0";
+
+averageStars.innerText="☆☆☆☆☆";
+
+ratingCount.innerText="0 ratings";
+
+return;
+
+}
+
+
+const total=
+savedRatings.reduce(
+(sum,rating)=>sum+Number(rating),
+0
+);
+
+
+const average=
+total/savedRatings.length;
+
+
+averageBox.innerText=
+average.toFixed(1);
+
+
+ratingCount.innerText=
+savedRatings.length+
+(savedRatings.length===1
+?" rating"
+:" ratings");
+
+
+/* Show average stars */
+
+let starsHTML="";
+
+for(let i=1;i<=5;i++){
+
+if(average>=i){
+
+starsHTML+="★";
+
+}else if(average>=i-0.5){
+
+starsHTML+="★";
+
+}else{
+
+starsHTML+="☆";
+
+}
+
+}
+
+averageStars.innerText=starsHTML;
+
+}
+
+
+/* Load saved average when page opens */
+
+updateAverageRating();
+
+
+/* ================= TOAST ================= */
+
+let toastTimer;
+
+function showToast(text){
+
+const toast=
+document.getElementById("toast");
+
+toast.innerText=text;
+
+toast.classList.add("show");
+
+clearTimeout(toastTimer);
+
+toastTimer=setTimeout(()=>{
+toast.classList.remove("show");
+},2200);
+
+}
+
+</script>
+
+</body>
+</html>
